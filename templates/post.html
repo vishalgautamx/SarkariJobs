@@ -1,71 +1,34 @@
 
 {% extends "base.html" %}
 
-
-<!-- =========================================================
-     SEO TITLE
-========================================================= -->
-
 {% block title %}
 {{ post.title }} | SarkariJobs
 {% endblock %}
 
-
-<!-- =========================================================
-     META DESCRIPTION
-========================================================= -->
-
 {% block meta_description %}
-
 {% if post.short_description %}
 {{ post.short_description|striptags|truncatechars:155 }}
 {% else %}
-
-{{ post.title }} - Check latest government job details,
-important dates, eligibility, vacancy, application fee,
-selection process and official links on SarkariJobs.
-
+{{ post.title }} - Check latest government job details, important dates, eligibility, vacancy, application fee, selection process and official links on SarkariJobs.
 {% endif %}
-
 {% endblock %}
-
-
-<!-- =========================================================
-     OPEN GRAPH TITLE
-========================================================= -->
 
 {% block og_title %}
 {{ post.title }} | SarkariJobs
 {% endblock %}
 
-
-<!-- =========================================================
-     OPEN GRAPH DESCRIPTION
-========================================================= -->
-
 {% block og_description %}
-
 {% if post.short_description %}
 {{ post.short_description|striptags|truncatechars:200 }}
 {% else %}
-
-Latest information about {{ post.title }},
-including important dates, eligibility, vacancy
-and official application links.
-
+Latest information about {{ post.title }}, including important dates, eligibility, vacancy and official application links.
 {% endif %}
-
 {% endblock %}
 
-
-<!-- =========================================================
-     PAGE CONTENT
-========================================================= -->
 
 {% block content %}
 
 <div class="post-page">
-
 
     <!-- =====================================================
          BREADCRUMB
@@ -150,7 +113,7 @@ and official application links.
          IMPORTANT DATES
     ====================================================== -->
 
-    {% if post.application_start or post.application_last_date or post.exam_date %}
+    {% if post.application_start or post.application_last_date or post.exam_date or post.result_date %}
 
     <section class="job-section">
 
@@ -201,7 +164,54 @@ and official application links.
                 </div>
 
                 <div>
+
                     {{ post.exam_date }}
+
+                    {% if post.exam_date_link %}
+
+                    <a href="{{ post.exam_date_link }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="date-link">
+
+                        View Exam Details
+
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.result_date %}
+
+            <div class="job-row">
+
+                <div>
+                    Result Date
+                </div>
+
+                <div>
+
+                    {{ post.result_date }}
+
+                    {% if post.result_link %}
+
+                    <a href="{{ post.result_link }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="date-link">
+
+                        View Result
+
+                    </a>
+
+                    {% endif %}
+
                 </div>
 
             </div>
@@ -219,7 +229,7 @@ and official application links.
          APPLICATION FEE
     ====================================================== -->
 
-    {% if post.general_fee or post.sc_st_fee or post.female_fee %}
+    {% if post.general_fee or post.ews_fee or post.obc_fee or post.sc_st_fee or post.female_fee or post.payment_mode %}
 
     <section class="job-section">
 
@@ -232,7 +242,7 @@ and official application links.
             <div class="job-row">
 
                 <div>
-                    General / OBC
+                    General Fee
                 </div>
 
                 <div>
@@ -243,3 +253,351 @@ and official application links.
 
             {% endif %}
 
+
+            {% if post.ews_fee %}
+
+            <div class="job-row">
+
+                <div>
+                    EWS Fee
+                </div>
+
+                <div>
+                    {{ post.ews_fee }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.obc_fee %}
+
+            <div class="job-row">
+
+                <div>
+                    OBC Fee
+                </div>
+
+                <div>
+                    {{ post.obc_fee }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.sc_st_fee %}
+
+            <div class="job-row">
+
+                <div>
+                    SC / ST Fee
+                </div>
+
+                <div>
+                    {{ post.sc_st_fee }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.female_fee %}
+
+            <div class="job-row">
+
+                <div>
+                    Female Fee
+                </div>
+
+                <div>
+                    {{ post.female_fee }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.payment_mode %}
+
+            <div class="job-row">
+
+                <div>
+                    Payment Mode
+                </div>
+
+                <div>
+                    {{ post.payment_mode }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         AGE LIMIT
+    ====================================================== -->
+
+    {% if post.minimum_age or post.maximum_age or post.age_relaxation %}
+
+    <section class="job-section">
+
+        <h2>Age Limit</h2>
+
+        <div class="job-table">
+
+            {% if post.minimum_age %}
+
+            <div class="job-row">
+
+                <div>
+                    Minimum Age
+                </div>
+
+                <div>
+                    {{ post.minimum_age }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.maximum_age %}
+
+            <div class="job-row">
+
+                <div>
+                    Maximum Age
+                </div>
+
+                <div>
+                    {{ post.maximum_age }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.age_relaxation %}
+
+            <div class="job-row">
+
+                <div>
+                    Age Relaxation
+                </div>
+
+                <div>
+                    {{ post.age_relaxation|linebreaksbr }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         VACANCY
+    ====================================================== -->
+
+    {% if post.vacancy_details %}
+
+    <section class="job-section">
+
+        <h2>Vacancy Details</h2>
+
+        <div class="job-content">
+
+            {{ post.vacancy_details|linebreaks }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         ELIGIBILITY
+    ====================================================== -->
+
+    {% if post.eligibility %}
+
+    <section class="job-section">
+
+        <h2>Eligibility</h2>
+
+        <div class="job-content">
+
+            {{ post.eligibility|linebreaks }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         SELECTION PROCESS
+    ====================================================== -->
+
+    {% if post.selection_process %}
+
+    <section class="job-section">
+
+        <h2>Selection Process</h2>
+
+        <div class="job-content">
+
+            {{ post.selection_process|linebreaks }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         ADDITIONAL CONTENT
+    ====================================================== -->
+
+    {% if post.content %}
+
+    <section class="job-section">
+
+        <h2>About {{ post.title }}</h2>
+
+        <div class="job-content">
+
+            {{ post.content|linebreaks }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         IMPORTANT LINKS
+    ====================================================== -->
+
+    {% if post.apply_link or post.notification_link or post.official_website %}
+
+    <section class="job-section">
+
+        <h2>Important Links</h2>
+
+        <div class="important-links">
+
+            {% if post.apply_link %}
+
+            <a href="{{ post.apply_link }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="important-link">
+
+                Apply Online
+
+            </a>
+
+            {% endif %}
+
+
+            {% if post.notification_link %}
+
+            <a href="{{ post.notification_link }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="important-link">
+
+                Download Notification
+
+            </a>
+
+            {% endif %}
+
+
+            {% if post.official_website %}
+
+            <a href="{{ post.official_website }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="important-link">
+
+                Official Website
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         SOURCE
+    ====================================================== -->
+
+    {% if post.source_name or post.source_url %}
+
+    <section class="job-section source-section">
+
+        <h2>Source</h2>
+
+        <div class="job-content">
+
+            {% if post.source_name %}
+
+            <strong>
+                {{ post.source_name }}
+            </strong>
+
+            {% endif %}
+
+
+            {% if post.source_url %}
+
+            <a href="{{ post.source_url }}"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                Official Source
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+</div>
+
+{% endblock %}

@@ -43,19 +43,49 @@ class Post(models.Model):
         blank=True
     )
 
+    exam_date_link = models.URLField(
+        blank=True
+    )
+
+    result_date = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    result_link = models.URLField(
+        blank=True
+    )
+
     # Application Fee
     general_fee = models.CharField(
         max_length=100,
         blank=True
     )
+    ews_fee = models.CharField(
+                max_length=100,
+                blank=True
+            )
 
     sc_st_fee = models.CharField(
         max_length=100,
         blank=True
     )
-
+    obc_fee = models.CharField(
+        max_length=100,
+        blank=True
+    )
+    
     female_fee = models.CharField(
         max_length=100,
+        blank=True
+    )
+
+    payment_mode = models.CharField(
+        max_length=20,
+        choices=[
+            ("Online", "Online"),
+            ("Offline", "Offline"),
+        ],
         blank=True
     )
 
