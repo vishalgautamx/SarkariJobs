@@ -39,8 +39,6 @@ INSTALLED_APPS = [
 
     'apps.core',
     'apps.posts',
-    'apps.dashboard',
-    'apps.scraper',
     'apps.pages',
     'apps.seo',
     'apps.api',
