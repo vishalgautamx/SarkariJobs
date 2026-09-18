@@ -1,0 +1,4627 @@
+/* =========================================
+   HOMEPAGE
+========================================= */
+
+.intro-section{
+    min-width: 80%;
+    text-align:center;
+    padding:10px 15px 5px;
+}
+
+.intro-section p{
+    max-width:80%;
+    margin:0 auto 8px;
+    font-size:13px;
+    line-height:1.4;
+    color:#333;
+}
+
+.live-badge{
+    display:inline-block;
+    border:none;
+    background: rgb(139, 255, 85);
+    border-radius:5px;
+    padding:1px 15px;
+    font-size:11px;
+    font-weight:bold;
+    margin:4px 0 18px;
+}
+
+.live-badge span{
+    font-size:12px;
+    color: red;
+}
+
+
+.whatsapp-btn{
+    display:block;
+    width:max-content;
+    margin:0 auto 16px;
+    padding:9px 18px;
+    background:#08b916;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+    transition:.3s ease;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,.25);
+}
+
+
+/* TOOLS */
+
+.tools-section{
+    max-width:85%;
+    margin:0 auto 0px;
+    padding:0 0px;
+}
+
+.tools-section h2{
+    text-align:center;
+    font-size:16px;
+    color:#273ca5;
+    margin:8px 0 15px;
+}
+
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+}
+
+.quick-box{
+    min-height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6px;
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.2;
+    border-radius:6px;
+    transition:.4s ease;
+}
+
+.quick-box span{
+    display:block;
+}
+
+.quick-box:hover{
+    transform:translateY(-2px);
+    opacity:.92;
+    color:#fff;
+}
+
+
+/* BOX COLORS */
+
+.box-red{
+    background:#f01818;
+}
+
+.box-orange{
+    background:#f46b0b;
+}
+
+.box-pink{
+    background:#e91bb7;
+}
+
+.box-blue{
+    background:#202aa8;
+}
+
+.box-olive{
+    background:#929900;
+}
+
+.box-lightblue{
+    background:#087fe8;
+}
+
+.box-darkred{
+    background:#720000;
+}
+
+.box-green{
+    background:#008522;
+}
+
+
+/* DISCOVER MORE */
+
+.discover-section{
+    max-width:85%;
+    margin:15px auto 22px;
+    padding:0 0px;
+}
+
+.discover-title{
+    background:#e9f0fb;
+    color:#555;
+    padding:10px 15px;
+    font-size:14px;
+    font-weight:500;
+    border:1px solid #d9dfe8;
+}
+
+.discover-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 15px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-top:none;
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+    transition:.2s ease;
+}
+
+.discover-item:hover{
+    background:#f7f7f7;
+    color:#222;
+}
+
+.arrow{
+    font-size:24px;
+    line-height:15px;
+    color:#999;
+}
+
+
+/* THREE COLUMNS */
+
+/* ================================
+   HOME SECTIONS
+================================ */
+
+.home-sections{
+    max-width:85%;
+    margin:25px auto 50px;
+    padding:0 0px;
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:6px;
+
+    align-items:stretch;
+}
+
+
+/* ================================
+   SECTION CARD
+================================ */
+
+.result-box{
+    position:relative;
+
+    background:#ffffff;
+    border:1px solid #e2b5b5;
+    border-radius:3px;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:250px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .7s ease,
+        border-color .3s ease;
+
+    animation:cardFade .6s ease both;
+}
+
+
+/* CARD HOVER */
+
+.result-box:hover{
+    transform:translateY(-10px);
+
+    border-color:#c40000;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.12);
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.section-title{
+    position:relative;
+
+    background:linear-gradient(
+        135deg,
+        #a90000,
+        #d40000
+    );
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:9px 8px;
+
+    font-size:16px;
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+    overflow:hidden;
+}
+
+
+/* Animated shine */
+
+.section-title::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.3),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:titleShine 4s infinite;
+}
+
+
+/* ================================
+   LIST
+================================ */
+
+.result-box ul{
+    margin:0;
+
+    padding:12px 12px 5px 30px;
+
+    flex:1;
+
+    background:#fff;
+}
+
+
+.result-box li{
+    position:relative;
+
+    margin-bottom:8px;
+
+    font-size:13px;
+    line-height:1.35;
+
+    transition:
+        transform .2s ease,
+        padding-left .2s ease;
+}
+
+
+/* bullet */
+
+.result-box li::marker{
+    color:#d00000;
+}
+
+
+/* LINK */
+
+.result-box li a{
+    color:#1117a5;
+
+    text-decoration:underline;
+
+    text-decoration-thickness:1px;
+
+    transition:
+        color .2s ease,
+        text-shadow .2s ease;
+}
+
+
+.result-box li a:hover{
+    color:#d00000;
+
+    text-shadow:
+        0 0 1px rgba(208,0,0,.3);
+}
+
+
+/* list hover */
+
+.result-box li:hover{
+    transform:translateX(4px);
+}
+
+
+/* ================================
+   VIEW MORE
+================================ */
+
+.view-more{
+    margin-top:auto;
+
+    padding:8px 9px 10px;
+
+    text-align:right;
+
+    background:#fafafa;
+
+    border-top:1px solid #eee;
+}
+
+
+.view-more a{
+    position:relative;
+
+    display:inline-block;
+
+    padding:6px 15px;
+
+    background:linear-gradient(
+        135deg,
+        #1684e8,
+        #005fc7
+    );
+
+    color:#fff !important;
+
+    text-decoration:none !important;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.view-more a:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.2);
+}
+
+
+/* Button shine */
+
+.view-more a::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:40%;
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:left .5s ease;
+}
+
+
+.view-more a:hover::after{
+    left:120%;
+}
+
+
+/* ================================
+   EMPTY MESSAGE
+================================ */
+
+.result-box li:not(:has(a)){
+    color:#777;
+
+    list-style:none;
+
+    text-align:center;
+
+    padding:20px 5px;
+
+    font-size:12px;
+}
+
+
+/* ================================
+   CARD ANIMATION
+================================ */
+
+@keyframes cardFade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+@keyframes titleShine{
+
+    0%{
+        left:-120%;
+    }
+
+    25%{
+        left:140%;
+    }
+
+    100%{
+        left:140%;
+    }
+}
+
+
+/* ================================
+   DESKTOP CARD STAGGER
+================================ */
+
+.result-box:nth-child(1){
+    animation-delay:.05s;
+}
+
+.result-box:nth-child(2){
+    animation-delay:.10s;
+}
+
+.result-box:nth-child(3){
+    animation-delay:.15s;
+}
+
+.result-box:nth-child(4){
+    animation-delay:.20s;
+}
+
+.result-box:nth-child(5){
+    animation-delay:.25s;
+}
+
+.result-box:nth-child(6){
+    animation-delay:.30s;
+}
+
+.result-box:nth-child(7){
+    animation-delay:.35s;
+}
+
+.result-box:nth-child(8){
+    animation-delay:.40s;
+}
+
+.result-box:nth-child(9){
+    animation-delay:.45s;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media(max-width:992px){
+
+    .home-sections{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:768px){
+
+    .home-sections{
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+        padding:0 7px;
+
+        margin-top:20px;
+    }
+
+
+    .result-box{
+        min-height:220px;
+
+        border-radius:5px;
+    }
+
+
+    .section-title{
+        font-size:15px;
+
+        padding:8px;
+    }
+
+
+    .result-box ul{
+        padding:11px 10px 5px 27px;
+    }
+
+
+    .result-box li{
+        font-size:12px;
+
+        margin-bottom:7px;
+    }
+
+
+    .view-more{
+        padding:7px 8px 9px;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media(max-width:400px){
+
+    .home-sections{
+        padding:0 5px;
+    }
+
+
+    .result-box li{
+        font-size:11.5px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .home-sections{
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+        padding:0 6px;
+        margin-top:20px;
+    }
+
+    .result-box{
+        min-height:220px;
+        border-radius:5px;
+    }
+
+    .section-title{
+        font-size:14px;
+        padding:8px 5px;
+    }
+
+    .result-box ul{
+        padding:10px 7px 5px 22px;
+    }
+
+    .result-box li{
+        font-size:11px;
+        line-height:1.3;
+        margin-bottom:7px;
+    }
+
+    .view-more{
+        padding:6px 6px 8px;
+    }
+
+    .view-more a{
+        padding:6px 10px;
+        font-size:10px;
+    }
+}
+
+@media(max-width:768px){
+
+    .intro-section{
+        padding:8px 10px 5px;
+    }
+
+    .intro-section p{
+        font-size:11px;
+    }
+
+    .whatsapp-btn{
+        font-size:13px;
+        padding:8px 15px;
+    }
+
+    .tools-section{
+        padding:0 8px;
+    }
+
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:3px;
+    }
+
+    .quick-box{
+        min-height:52px;
+        font-size:11px;
+    }
+
+    .discover-section{
+        padding:0 8px;
+    }
+
+    .home-columns{
+        grid-template-columns:1fr;
+        gap:15px;
+        padding:0 8px 25px;
+    }
+
+    .column-heading{
+        font-size:15px;
+    }
+
+}
+
+/* Section Animation */
+.content-column{
+    border:1px solid #c9c9c9;
+    min-width:0;
+    background:#fff;
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.content-column:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+/* List item animation */
+.content-column li{
+    transition:transform .25s ease, padding-left .25s ease;
+}
+
+.content-column li:hover{
+    transform:translateX(4px);
+}
+
+/* View More */
+.view-more-wrap{
+    text-align:center;
+    padding:10px 10px 14px;
+    border-top:1px solid #eee;
+}
+
+.view-more-btn{
+    display:inline-block;
+    padding:7px 18px;
+    background:#011a4b;
+    color:#fff !important;
+    text-decoration:none !important;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:600;
+    transition:all .3s ease;
+}
+
+.view-more-btn:hover{
+    background:#b90000;
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+@media(max-width:400px){
+
+    .home-sections{
+        grid-template-columns:repeat(2, 1fr);
+        gap:7px;
+        padding:0 4px;
+    }
+
+    .result-box{
+        min-height:200px;
+    }
+
+    .section-title{
+        font-size:13px;
+    }
+
+    .result-box li{
+        font-size:10.5px;
+    }
+
+}
+/* =====================================
+   SARKARIJOBS LOWER INFORMATION SECTION
+===================================== */
+
+.sarkarijobs-info{
+    width:100%;
+    max-width:1140px;
+    margin:25px auto 30px;
+    padding:0 8px;
+    box-sizing:border-box;
+}
+
+
+/* TOP DESCRIPTION */
+
+.top-description{
+    text-align:center;
+    font-size:12px;
+    line-height:1.5;
+    color:#333;
+}
+
+.top-description p{
+    margin:0 0 5px;
+}
+
+.top-description h3{
+    margin:5px 0 3px;
+
+    font-size:12px;
+
+    color:#a00000;
+
+    text-decoration:underline;
+}
+
+
+/* TOP PAGES TABLE */
+
+.top-pages-table{
+    width:75%;
+    margin:0 auto 8px;
+
+    border-collapse:collapse;
+
+    font-size:11px;
+}
+
+.top-pages-table td{
+    border:1px solid #555;
+
+    padding:3px 6px;
+
+    text-align:center;
+
+    color:#444;
+}
+
+.top-pages-table td{
+    color:#333;
+}
+
+.top-pages-table td:hover{
+    background:#f1f5ff;
+    color:#1117a5;
+}
+
+
+/* =====================================
+   DYNAMIC RED INFORMATION BOX
+===================================== */
+
+.sj-info-box{
+    width:85%;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    margin-bottom:2px;
+
+    overflow:hidden;
+
+    transition:
+        box-shadow .3s ease,
+        transform .3s ease;
+
+    animation:sjFade .5s ease both;
+}
+
+.sj-info-box:hover{
+    transform:translateY(-1px);
+
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+}
+
+
+/* RED TITLE */
+
+.sj-info-title{
+    position:relative;
+
+    background:#b40000;
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    padding:6px 8px;
+
+    overflow:hidden;
+}
+
+
+/* TITLE SHINE */
+
+.sj-info-title::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:45%;
+    height:100%;
+
+    background:rgba(255,255,255,.2);
+
+    transform:skewX(-25deg);
+
+    animation:sjShine 5s infinite;
+}
+
+
+/* CONTENT */
+
+.sj-info-content{
+    padding:7px 12px;
+
+    text-align:center;
+
+    font-size:11.5px;
+
+    line-height:1.55;
+
+    color:#333;
+}
+
+.sj-info-content p{
+    margin:0 0 4px;
+}
+
+
+/* =====================================
+   DISCOVER MORE
+===================================== */
+
+.sj-discover{
+    width:100%;
+
+    margin-top:0;
+
+    border:1px solid #ddd;
+
+    border-radius:4px;
+
+    overflow:hidden;
+
+    background:#fff;
+}
+
+.sj-discover-title{
+    background:#e8f0ff;
+
+    color:#666;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    padding:9px 15px;
+
+    border-bottom:1px solid #d8dfeb;
+}
+
+.sj-discover-item{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 15px;
+
+    color:#555;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    border-bottom:1px solid #eee;
+
+    transition:.25s ease;
+}
+
+.sj-discover-item:last-child{
+    border-bottom:none;
+}
+
+.sj-discover-item:hover{
+    background:#f7f9fc;
+
+    color:#1117a5;
+
+    padding-left:19px;
+}
+
+.sj-discover-item span:last-child{
+    font-size:23px;
+
+    color:#999;
+
+    line-height:15px;
+}
+
+
+/* =====================================
+   DISCLAIMER
+===================================== */
+
+.sj-disclaimer{
+    padding:7px 10px;
+
+    border:1px solid #ddd;
+
+    border-top:none;
+
+    font-size:10.5px;
+
+    line-height:1.5;
+
+    color:#333;
+
+    background:#fff;
+}
+
+.sj-disclaimer p{
+    margin:0;
+}
+
+
+/* =====================================
+   FAQ
+===================================== */
+
+.sj-faq{
+    width:100%;
+
+    max-width:1140px;
+
+    margin:70px auto 30px;
+
+    padding:0 8px;
+
+    box-sizing:border-box;
+}
+
+.sj-faq h2{
+    font-size:18px;
+
+    color:#42516d;
+
+    margin:0 0 15px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #eee;
+}
+
+.faq-item{
+    margin-bottom:18px;
+}
+
+.faq-item h3{
+    font-size:12px;
+
+    color:#222;
+
+    margin:0 0 7px;
+}
+
+.faq-item p{
+    font-size:11.5px;
+
+    line-height:1.55;
+
+    color:#444;
+
+    margin:0;
+}
+
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+@keyframes sjFade{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes sjShine{
+
+    0%{
+        left:-100%;
+    }
+
+    20%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+    .sarkarijobs-info{
+        padding:0 5px;
+        margin-top:20px;
+    }
+
+    .top-description{
+        font-size:10.5px;
+    }
+
+    .top-pages-table{
+        width:90%;
+        font-size:9px;
+    }
+
+    .top-pages-table td{
+        padding:3px 2px;
+    }
+
+    .sj-info-title{
+        font-size:14px;
+        padding:6px;
+    }
+
+    .sj-info-content{
+        font-size:10px;
+        line-height:1.5;
+        padding:7px 8px;
+    }
+
+    .sj-discover-title{
+        font-size:12px;
+    }
+
+    .sj-discover-item{
+        font-size:11px;
+        padding:10px;
+    }
+
+    .sj-disclaimer{
+        font-size:9.5px;
+    }
+
+    .sj-faq{
+        margin-top:45px;
+        padding:0 6px;
+    }
+
+    .sj-faq h2{
+        font-size:16px;
+    }
+
+    .faq-item h3{
+        font-size:11px;
+    }
+
+    .faq-item p{
+        font-size:10.5px;
+    }
+
+}
+/* =====================================================
+   SARKARIJOBS LOWER SECTION
+===================================================== */
+
+.sarkarijobs-info{
+
+    max-width:100%;
+
+    margin:35px auto 45px;
+
+    padding:0 0px;
+
+    box-sizing:border-box;
+
+    animation:sjMainEnter .8s ease both;
+}
+
+
+/* =====================================================
+   TOP DESCRIPTION
+===================================================== */
+
+/* =========================================================
+   PREMIUM ANIMATED TOP DESCRIPTION
+========================================================= */
+
+.top-description {
+
+    position: relative;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #333;
+
+    margin: 0 auto 15px;
+
+    max-width: 1000px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8f8,
+            #ffffff
+        );
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    background-clip: padding-box;
+
+    box-shadow:
+        0 5px 18px rgba(100, 0, 0, 0.06);
+
+    overflow: hidden;
+
+    animation: descriptionAppear 0.7s ease both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Premium animated shine */
+
+.top-description::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.65),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation: descriptionShine 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* Subtle animated top line */
+
+.top-description::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+
+    width: 80%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b00000,
+            #e3a0a0,
+            #b00000,
+            transparent
+        );
+
+    background-size: 200% 100%;
+
+    animation: descriptionLine 4s linear infinite;
+
+    opacity: 0.8;
+}
+
+
+/* Hover */
+
+.top-description:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 28px rgba(100, 0, 0, 0.11);
+}
+
+
+/* Strong text */
+
+.top-description strong {
+
+    color: #8d0000;
+
+    font-weight: 700;
+
+    transition: color 0.25s ease;
+}
+
+
+.top-description:hover strong {
+
+    color: #c00000;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes descriptionAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes descriptionShine {
+
+    0% {
+        left: -120%;
+    }
+
+    45% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+
+@keyframes descriptionLine {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* =========================================================
+   PREMIUM ANIMATED TOP PAGES TABLE
+========================================================= */
+
+.top-pages-table {
+
+    position: relative;
+
+    width: 80%;
+
+    margin: 0 auto;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(80, 0, 0, 0.07);
+
+    animation:
+        sjTableEnter 0.7s ease both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Premium table hover */
+
+.top-pages-table:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(80, 0, 0, 0.11);
+}
+
+
+/* =========================================================
+   ANIMATED TOP LINE
+========================================================= */
+
+.top-pages-table::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #a00000,
+            #e8a0a0,
+            #a00000,
+            transparent
+        );
+
+    background-size: 200% 100%;
+
+    animation:
+        tableLineMove 4s ease-in-out infinite;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.top-pages-table td {
+
+    position: relative;
+
+    padding: 11px 14px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8f8
+        );
+
+    border: 1px solid #eadede;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Cell hover */
+
+.top-pages-table td:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f4,
+            #ffffff
+        );
+
+    border-color: #d8aaaa;
+
+    box-shadow:
+        inset 0 0 12px rgba(150, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.top-pages-table td a {
+
+    position: relative;
+
+    color: #8d0000;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        letter-spacing 0.25s ease;
+}
+
+
+.top-pages-table td a:hover {
+
+    color: #c00000;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   ANIMATED LINK UNDERLINE
+========================================================= */
+
+.top-pages-table td a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -3px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c00000;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.top-pages-table td a:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLE ENTRY ANIMATION
+========================================================= */
+
+@keyframes sjTableEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOVING TOP LINE
+========================================================= */
+
+@keyframes tableLineMove {
+
+    0% {
+        left: -70%;
+    }
+
+    45% {
+        left: 110%;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .top-description {
+
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        padding: 12px 13px;
+
+        margin-bottom: 12px;}}
+
+
+
+.top-description p{
+
+    margin:0 auto 8px;
+
+    max-width:1100px;
+}
+
+
+.top-description strong{
+
+    color:#a90000;
+
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+
+.top-description strong:hover{
+
+    color:#e00000;
+
+    text-shadow:0 0 8px rgba(220,0,0,.2);
+}
+
+
+.top-description h3{
+
+    display:inline-block;
+
+    margin:4px 0 8px;
+
+    font-size:14px;
+
+    color:#a00000;
+
+    text-decoration:underline;
+
+    animation:sjTextPulse 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   TOP PAGES TABLE
+===================================================== */
+
+.top-pages-table{
+
+    width:80%;
+
+    margin:0 auto;
+
+    border-collapse:collapse;
+
+    font-size:14px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    animation:sjTableEnter .7s ease both;
+}
+
+
+.top-pages-table td{
+
+    border:1px solid #555;
+
+    padding:5px 7px;
+
+    text-align:center;
+
+    color:#333;
+
+    background:#fff;
+
+    transition:
+
+        background .25s ease,
+
+        color .25s ease,
+
+        transform .25s ease;
+}
+
+
+.top-pages-table td:hover{
+
+    background:#edf4ff;
+
+    color:#1117a5;
+
+}
+
+
+/* =====================================================
+   DYNAMIC INFORMATION
+===================================================== */
+
+.sj-info-sections{
+
+    width:100%;
+    margin-top:10px;
+}
+
+
+.sj-info-box{
+
+    position:relative;
+    width: 100%;
+    background:#fff;
+align-items: center;
+justify-content: center;
+    border:1px solid #ddd;
+
+    margin-bottom:3px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.05);
+
+    animation:sjBoxEnter .65s ease both;
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease,
+
+        border-color .3s ease;
+}
+
+
+/* stagger */
+
+.sj-info-box:nth-child(1){
+    animation-delay:.05s;
+}
+
+.sj-info-box:nth-child(2){
+    animation-delay:.12s;
+}
+
+.sj-info-box:nth-child(3){
+    animation-delay:.19s;
+}
+
+.sj-info-box:nth-child(4){
+    animation-delay:.26s;
+}
+
+.sj-info-box:nth-child(5){
+    animation-delay:.33s;
+}
+
+.sj-info-box:nth-child(6){
+    animation-delay:.40s;
+}
+
+
+.sj-info-box:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#bd0000;
+
+    box-shadow:
+        0 7px 18px rgba(0,0,0,.13);
+}
+
+
+/* =====================================================
+   RED TITLE
+===================================================== */
+
+.sj-info-title{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:34px;
+
+    padding:6px 12px;
+
+    box-sizing:border-box;
+
+    background:linear-gradient(
+        90deg,
+        #9d0000,
+        #c90000,
+        #9d0000
+    );
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    overflow:hidden;
+}
+
+
+/* animated shine */
+
+.sj-info-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:45%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:sjRedShine 4s infinite;
+}
+
+
+/* title hover */
+
+.sj-info-title span{
+
+    position:relative;
+
+    z-index:2;
+
+    transition:
+
+        transform .3s ease,
+
+        letter-spacing .3s ease;
+}
+
+
+.sj-info-box:hover .sj-info-title span{
+
+    transform:scale(1.03);
+
+    letter-spacing:.3px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.sj-info-content{
+
+    padding:11px 16px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#333;
+
+    background:#fff;
+
+    animation:sjContentFade .8s ease both;
+}
+
+
+.sj-info-content p{
+
+    margin:0 0 6px;
+}
+
+
+.sj-info-content a{
+
+    color:#1117a5;
+
+    text-decoration:underline;
+
+    font-weight:500;
+
+    transition:
+
+        color .25s ease,
+
+        text-shadow .25s ease;
+}
+
+
+.sj-info-content a:hover{
+
+    color:#d00000;
+
+    text-shadow:
+        0 0 5px rgba(208,0,0,.2);
+}
+
+
+/* =====================================================
+   DISCOVER MORE
+===================================================== */
+
+.sj-discover{
+
+    min-width:50%;
+
+    margin-top:3px;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.06);
+
+    animation:sjBoxEnter .7s ease both;
+}
+
+
+.sj-discover-title{
+
+    position:relative;
+
+    padding:10px 16px;
+
+    background:linear-gradient(
+        90deg,
+        #e7effc,
+        #f2f6fd,
+        #e7effc
+    );
+
+    border-bottom:1px solid #d7dfec;
+
+    color:#4d5c73;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    overflow:hidden;
+}
+
+
+.sj-discover-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:35%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.55);
+
+    transform:skewX(-25deg);
+
+    animation:sjDiscoverShine 5s infinite;
+}
+
+
+/* discover links */
+
+.sj-discover-item{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 16px;
+
+    border-bottom:1px solid #eee;
+
+    background:#fff;
+
+    color:#555;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    overflow:hidden;
+
+    transition:
+
+        background .3s ease,
+
+        padding-left .3s ease,
+
+        color .3s ease;
+}
+
+
+.sj-discover-item:last-child{
+
+    border-bottom:none;
+}
+
+
+.sj-discover-item:hover{
+
+    background:#f5f8fd;
+
+    color:#1117a5;
+
+    padding-left:23px;
+}
+
+
+/* arrow */
+
+.discover-arrow{
+
+    font-size:28px;
+
+    line-height:15px;
+
+    color:#999;
+
+    transition:
+
+        transform .3s ease,
+
+        color .3s ease;
+}
+
+
+.sj-discover-item:hover .discover-arrow{
+
+    color:#1117a5;
+
+    transform:translateX(6px);
+}
+
+
+/* =====================================================
+   DISCLAIMER
+===================================================== */
+
+.sj-disclaimer{
+
+    padding:11px 13px;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-top:none;
+
+    color:#444;
+
+    font-size:14px;
+
+    line-height:1.65;
+
+    animation:sjContentFade .8s ease both;
+}
+
+
+.disclaimer-icon{
+
+    color:#b40000;
+
+    font-size:9px;
+
+    margin-right:4px;
+
+    animation:sjBlink 2s infinite;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.sj-faq{
+
+    width:100%;
+
+    max-width:1140px;
+
+    margin:70px auto 45px;
+
+    padding:0 8px;
+
+    box-sizing:border-box;
+
+    animation:sjMainEnter .8s ease both;
+}
+
+
+/* FAQ heading */
+
+.sj-faq-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-bottom:20px;
+
+    padding-bottom:10px;
+
+    border-bottom:1px solid #e5e5e5;
+
+    font-size:20px;
+
+    color:#42516d;
+}
+
+
+.sj-faq-header span{
+
+    font-weight:800;
+
+    color:#a90000;
+}
+
+
+.sj-faq-header strong{
+
+    font-weight:600;
+
+    color:#42516d;
+}
+
+
+/* FAQ item */
+
+.faq-item{
+
+    margin-bottom:22px;
+
+    padding:12px 14px;
+
+    border-left:3px solid transparent;
+
+    background:#fff;
+
+    border-radius:4px;
+
+    transition:
+
+        background .3s ease,
+
+        border-color .3s ease,
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:sjFaqEnter .6s ease both;
+}
+
+
+.faq-item:hover{
+
+    background:#fafcff;
+
+    border-left-color:#b40000;
+
+    transform:translateX(4px);
+
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+
+/* question */
+
+.faq-question{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#222;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+}
+
+
+/* question icon */
+
+.faq-icon{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#b40000;
+
+    color:#fff;
+
+    font-size:12px;
+
+    flex-shrink:0;
+
+    animation:sjQuestionPulse 2.5s infinite;
+}
+
+
+/* answer */
+
+.faq-answer{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#444;
+
+    padding-left:28px;
+}
+
+
+.faq-answer p{
+
+    margin:0;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.sj-empty{
+
+    padding:18px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes sjMainEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+@keyframes sjBoxEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.99);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes sjContentFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+@keyframes sjTableEnter{
+
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+@keyframes sjRedShine{
+
+    0%{
+        left:-120%;
+    }
+
+    20%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
+
+
+@keyframes sjDiscoverShine{
+
+    0%{
+        left:-100%;
+    }
+
+    20%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
+
+
+@keyframes sjTextPulse{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.7;
+    }
+
+}
+
+
+@keyframes sjBlink{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.35;
+    }
+
+}
+
+
+@keyframes sjQuestionPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+
+@keyframes sjFaqEnter{
+
+    from{
+        opacity:0;
+        transform:translateX(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .sarkarijobs-info{
+
+        padding:0 5px;
+
+        margin-top:22px;
+    }
+
+
+    .top-description{
+
+        font-size:14px;
+
+        line-height:1.55;
+    }
+
+
+    .top-description h3{
+
+        font-size:13px;
+    }
+
+
+    .top-pages-table{
+
+        width:98%;
+
+        font-size:10px;
+    }
+
+
+    .top-pages-table td{
+
+        padding:4px 2px;
+    }
+
+
+    .sj-info-title{
+
+        font-size:14px;
+
+        min-height:32px;
+
+        padding:7px 5px;
+    }
+
+
+    .sj-info-content{
+
+        font-size:14px;
+
+        line-height:1.6;
+
+        padding:10px 8px;
+    }
+
+
+    .sj-discover-title{
+
+        font-size:14px;
+
+        padding:10px;
+    }
+
+
+    .sj-discover-item{
+
+        font-size:14px;
+
+        padding:11px 10px;
+    }
+
+
+    .sj-discover-item:hover{
+
+        padding-left:15px;
+    }
+
+
+    .sj-disclaimer{
+
+        font-size:12px;
+
+        line-height:1.6;
+
+        padding:9px;
+    }
+
+
+    .sj-faq{
+
+        padding:0 6px;
+
+        margin-top:50px;
+    }
+
+
+    .sj-faq-header{
+
+        font-size:18px;
+    }
+
+
+    .faq-item{
+
+        padding:10px 8px;
+
+        margin-bottom:16px;
+    }
+
+
+    .faq-question{
+
+        font-size:14px;
+
+        line-height:1.4;
+    }
+
+
+    .faq-answer{
+
+        font-size:14px;
+
+        line-height:1.6;
+
+        padding-left:28px;
+    }
+
+}
+
+/* =========================================================
+   SARKARIJOBS HOMEPAGE - MODERN ANIMATED UI
+   Existing HTML structure preserved
+========================================================= */
+
+
+/* =========================================================
+   1. INTRO SECTION
+========================================================= */
+
+.intro-section {
+    position: relative;
+    overflow: hidden;
+
+    margin: 25px auto;
+    padding: 28px 25px;
+
+    max-width: 85%;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #fff7f7
+        );
+
+    border: 1px solid #f0dada;
+
+    box-shadow:
+        0 10px 35px rgba(90, 0, 0, 0.08);
+
+    animation: homeFadeUp 0.7s ease both;
+}
+
+
+/* Background decoration */
+
+.intro-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(180, 0, 0, 0.05);
+
+    top: -100px;
+    right: -50px;
+
+    animation: floatingCircle 6s ease-in-out infinite;
+}
+
+.intro-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 170, 0, 0.06);
+
+    bottom: -50px;
+    left: -30px;
+
+    animation: floatingCircle 5s ease-in-out infinite reverse;
+}
+
+.intro-section p {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.intro-section strong {
+    color: #9b0000;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   2. LIVE BADGE
+========================================================= */
+
+.live-badge {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    background: #fff0f0;
+
+    color: #c00000;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    border: 1px solid #ffd1d1;
+
+    animation: livePulse 2s infinite;
+}
+
+.live-badge span {
+    font-size: 12px;
+
+    animation: dotBlink 1s infinite;
+}
+
+
+/* =========================================================
+   3. WHATSAPP BUTTON
+========================================================= */
+
+.whatsapp-btn {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 18px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #168c45,
+        #25b963
+    );
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px rgba(20, 130, 70, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    color: #fff;
+
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 25px rgba(20, 130, 70, 0.28);
+}
+
+.whatsapp-btn i {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover i {
+    transform: rotate(12deg) scale(1.15);
+}
+
+
+/* =========================================================
+   4. SARKARIJOBS UPDATES
+========================================================= */
+
+.tools-section {
+
+    animation: homeFadeUp 0.8s ease both;
+}
+
+.tools-section h2 {
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding-left: 15px;
+
+    color: #850000;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tools-section h2::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 4px;
+
+    width: 5px;
+    height: 25px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        #850000,
+        #e01b1b
+    );
+}
+
+
+/* =========================================================
+   5. QUICK GRID
+========================================================= */
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+}
+
+
+/* Quick boxes - structure same */
+
+.quick-box {
+
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Shine */
+
+.quick-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+.quick-box:hover::before {
+    left: 130%;
+}
+
+.quick-box:hover {
+    color: #fff;
+
+    transform:
+        translateY(-6px)
+        scale(1.015);
+
+    box-shadow:
+        0 13px 28px rgba(0,0,0,0.17);
+}
+
+
+/* Different entrance */
+
+.quick-box:nth-child(1) {
+    animation: boxAppear 0.5s ease both;
+}
+
+.quick-box:nth-child(2) {
+    animation: boxAppear 0.6s ease both;
+}
+
+.quick-box:nth-child(3) {
+    animation: boxAppear 0.7s ease both;
+}
+
+.quick-box:nth-child(4) {
+    animation: boxAppear 0.8s ease both;
+}
+
+
+/* =========================================================
+   6. DISCOVER MORE
+   ONLY LIGHT ANIMATION / STYLE CHANGE
+========================================================= */
+
+
+.discover-title {
+    margin-bottom: 10px;
+
+    color: #555;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.discover-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 15px;
+
+    margin-bottom: 7px;
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 8px;
+
+    color: #444;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.discover-item:hover {
+    color: #8d0000;
+
+    background: #fffafa;
+
+    transform: translateX(4px);
+
+    border-color: #e7caca;
+}
+
+.discover-item .arrow {
+    font-size: 23px;
+
+    color: #a00000;
+
+    transition: transform 0.25s ease;
+}
+
+.discover-item:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   7. MAIN THREE COLUMN SECTIONS
+/* =========================================================
+   PREMIUM ANIMATED SECTION BOXES
+   85% WIDTH • COMPACT • 1px ANIMATED BORDER
+========================================================= */
+
+.home-sections {
+    width: 85%;
+    max-width: 1250px;
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   PREMIUM RESULT BOX
+========================================================= */
+
+.result-box {
+    position: relative;
+
+    background: #fff;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(
+            120deg,
+            #8b0000,
+            #e6b3b3,
+            #c00000,
+            #ffdede,
+            #8b0000
+        ) border-box;
+
+    background-size:
+        100% 100%,
+        300% 300%;
+
+    animation:
+        premiumBox 0.7s ease both,
+        borderFlow 5s linear infinite;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(100, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   MOVING PREMIUM BORDER
+========================================================= */
+
+@keyframes borderFlow {
+
+    0% {
+        background-position:
+            0 0,
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            0 0,
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0 0,
+            0% 50%;
+    }
+}
+
+
+/* =========================================================
+   BOX HOVER
+========================================================= */
+
+.result-box:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.008);
+
+    box-shadow:
+        0 14px 35px rgba(110, 0, 0, 0.15),
+        0 0 18px rgba(180, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   PREMIUM LIGHT SWEEP
+========================================================= */
+
+.result-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.45),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    pointer-events: none;
+
+    transition: left 0.8s ease;
+}
+
+
+.result-box:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.result-box .section-title {
+
+    position: relative;
+
+    padding: 11px 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #780000,
+            #a80000,
+            #d41414
+        );
+
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    overflow: hidden;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* Animated title shine */
+
+.result-box .section-title::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.20),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation: titleShine 4s ease-in-out infinite;
+}
+
+
+@keyframes titleShine {
+
+    0% {
+        left: -100%;
+    }
+
+    45% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 2 COLUMN SECTION BOXES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-sections {
+        width: 92%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 5px;
+
+        margin: 22px auto;
+    }
+
+    .result-box {
+        width: 100%;
+        max-height: none;
+
+        border-radius: 9px;
+    }
+
+    .result-box .section-title {
+        padding: 10px 9px;
+
+        font-size: 14px;
+    }
+
+    .result-box li a {
+        padding: 8px 8px 8px 25px !important;
+
+        font-size: 12px;
+
+        line-height: 1.35;
+    }
+
+    .result-box li a:hover {
+        padding-left: 29px !important;
+    }
+
+    .result-box .view-more {
+        padding: 7px !important;
+    }
+
+    .result-box .view-more a {
+        padding: 5px 10px;
+
+        font-size: 11px;
+    }
+}
+}
+
+
+/* =========================================================
+   PREMIUM SARKARIJOBS INFO SECTION
+========================================================= */
+
+.sarkarijobs-info {
+
+    position: relative;
+
+    width: 85%;
+    max-width: 1250px;
+
+    margin: 35px auto;
+
+    padding: 28px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fffafa 45%,
+            #ffffff 100%
+        );
+
+    border: 1px solid transparent;
+
+    border-radius: 16px;
+
+    background-clip: padding-box;
+
+    box-shadow:
+        0 8px 30px rgba(80, 0, 0, 0.07);
+
+    overflow: hidden;
+
+    animation:
+        infoSectionEnter 0.8s ease both;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Animated outer shine */
+
+.sarkarijobs-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 55%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.55),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        infoShine 7s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* Premium top line */
+
+.sarkarijobs-info::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+
+    width: 80%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8b0000,
+            #e7a0a0,
+            #8b0000,
+            transparent
+        );
+
+    background-size: 200% 100%;
+
+    animation:
+        infoLine 4s linear infinite;
+}
+
+
+/* =========================================================
+   TOP DESCRIPTION
+========================================================= */
+
+.top-description {
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 14px 18px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #333;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff7f7,
+            #ffffff
+        );
+
+    border: 1px solid #ead7d7;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(100,0,0,0.05);
+
+    overflow: hidden;
+
+    animation:
+        descriptionEnter 0.8s ease both;
+}
+
+
+/* Description shine */
+
+.top-description::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 55%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        descriptionShine 6s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+.top-description strong {
+
+    color: #8d0000;
+
+    font-weight: 750;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.top-description:hover strong {
+
+    color: #c00000;
+}
+
+
+/* =========================================================
+   TOP PAGES HEADING
+========================================================= */
+
+.top-description h3 {
+
+    position: relative;
+
+    display: inline-block;
+
+    margin: 12px 0 14px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f0,
+            #fff8f8
+        );
+
+    border: 1px solid #e5caca;
+
+    color: #8d0000;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 12px rgba(120,0,0,0.06);
+
+    animation:
+        headingPulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TOP PAGES TABLE
+========================================================= */
+
+.top-pages-table {
+
+    width: 80%;
+
+    margin: 0 auto;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(80,0,0,0.06);
+
+    animation:
+        tableEnter 0.8s ease both;
+}
+
+
+/* Table cells */
+
+.top-pages-table td {
+
+    position: relative;
+
+    padding: 10px 12px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff9f9
+        );
+
+    border: 1px solid #eadede;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.top-pages-table td:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f1,
+            #ffffff
+        );
+
+    box-shadow:
+        inset 0 0 12px rgba(150,0,0,0.05);
+}
+
+
+.top-pages-table td a {
+
+    color: #8d0000;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        letter-spacing 0.25s ease;
+}
+
+
+.top-pages-table td a:hover {
+
+    color: #c00000;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   INFORMATION BOX GRID
+========================================================= */
+
+.sj-info-sections {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   PREMIUM INFORMATION BOX
+========================================================= */
+
+.sj-info-box {
+
+    position: relative;
+
+    background: #fff;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(#fff,#fff) padding-box,
+        linear-gradient(
+            120deg,
+            #ead2d2,
+            #ffffff,
+            #c98f8f,
+            #ffffff,
+            #ead2d2
+        ) border-box;
+
+    background-size:
+        100% 100%,
+        300% 300%;
+
+    animation:
+        infoBoxBorder 6s linear infinite;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(70,0,0,0.05);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Box hover */
+
+.sj-info-box:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 13px 30px rgba(100,0,0,0.12);
+}
+
+
+/* Moving shine */
+
+.sj-info-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.45),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.8s ease;
+
+    pointer-events: none;
+}
+
+
+.sj-info-box:hover::after {
+
+    left: 140%;
+}
+
+
+/* =========================================================
+   INFORMATION BOX TITLE
+========================================================= */
+
+.sj-info-title {
+
+    position: relative;
+
+    padding: 11px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #800000,
+            #a90000,
+            #d41414
+        );
+
+    color: #fff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+}
+
+
+/* Title shine */
+
+.sj-info-title::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 55%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.20),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        titleSweep 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   INFORMATION CONTENT
+========================================================= */
+
+.sj-info-content {
+
+    padding: 12px 15px;
+
+    color: #555;
+
+    font-size: 13.5px;
+
+    line-height: 1.75;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fffdfd
+        );
+}
+
+
+/* =========================================================
+   DISCOVER MORE
+========================================================= */
+
+.sj-discover {
+
+    position: relative;
+
+    margin-top: 25px;
+
+    padding: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffafa,
+            #ffffff
+        );
+
+    border: 1px solid #eadede;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(80,0,0,0.05);
+
+    overflow: hidden;
+
+    animation:
+        discoverEnter 0.8s ease both;
+}
+
+
+/* Discover heading */
+
+.sj-discover-title {
+
+    margin-bottom: 12px;
+
+    color: #8d0000;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* Discover item */
+
+.sj-discover-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 13px;
+
+    margin-bottom: 5px;
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 8px;
+
+    color: #444;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.sj-discover-item:last-child {
+    margin-bottom: 0;
+}
+
+
+.sj-discover-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff0f0,
+            transparent
+        );
+
+    transition:
+        width 0.35s ease;
+}
+
+
+.sj-discover-item:hover {
+
+    color: #a00000;
+
+    transform:
+        translateX(5px);
+
+    border-color: #dfbcbc;
+
+    box-shadow:
+        0 5px 14px rgba(100,0,0,0.07);
+}
+
+
+.sj-discover-item:hover::before {
+    width: 100%;
+}
+
+
+.discover-text,
+.discover-arrow {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.discover-arrow {
+
+    font-size: 22px;
+
+    color: #a00000;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.sj-discover-item:hover .discover-arrow {
+
+    transform:
+        translateX(5px)
+        scale(1.1);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.sj-disclaimer {
+
+    position: relative;
+
+    margin-top: 22px;
+
+    padding: 14px 17px 14px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e8,
+            #fffdf7
+        );
+
+    border: 1px solid #efd8a7;
+
+    color: #6b5635;
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(150,100,0,0.05);
+}
+
+
+/* Animated left indicator */
+
+.sj-disclaimer::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #d69500,
+            #f0b52c,
+            #d69500
+        );
+
+    background-size: 100% 200%;
+
+    animation:
+        warningBar 3s linear infinite;
+}
+
+
+.disclaimer-icon {
+
+    color: #d69500;
+
+    margin-right: 5px;
+
+    animation:
+        dotBlink 1.5s infinite;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+========================================================= */
+
+.sj-faq {
+
+    width: 85%;
+    max-width: 1150px;
+
+    margin: 40px auto 60px;
+
+    animation:
+        faqEnter 0.9s ease both;
+}
+
+
+/* FAQ heading */
+
+.sj-faq-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+
+    color: #8d0000;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+.sj-faq-header span {
+
+    padding: 5px 12px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #850000,
+            #c91414
+        );
+
+    color: #fff;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 4px 12px rgba(130,0,0,0.15);
+
+    animation:
+        faqBadge 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.faq-item {
+
+    position: relative;
+
+    margin-bottom: 9px;
+
+    background: #fff;
+
+    border: 1px solid #eadede;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.faq-item:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color: #dfc0c0;
+
+    box-shadow:
+        0 9px 24px rgba(90,0,0,0.09);
+}
+
+
+/* =========================================================
+   FAQ QUESTION
+========================================================= */
+
+.faq-question {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 15px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #fffafa
+        );
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.faq-question:hover {
+
+    color: #8d0000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff5f5,
+            #ffffff
+        );
+}
+
+
+/* FAQ icon */
+
+.faq-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #850000,
+            #d41414
+        );
+
+    color: #fff;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 3px 8px rgba(130,0,0,0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.faq-item:hover .faq-icon {
+
+    transform:
+        rotate(15deg)
+        scale(1.1);
+
+    box-shadow:
+        0 5px 12px rgba(130,0,0,0.22);
+}
+
+
+/* =========================================================
+   FAQ ANSWER
+========================================================= */
+
+.faq-answer {
+
+    padding: 0 18px 15px 54px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    background: #fff;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes infoSectionEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes infoShine {
+
+    0% {
+        left: -120%;
+    }
+
+    40% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+
+@keyframes infoLine {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+
+@keyframes descriptionEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes descriptionShine {
+
+    0% {
+        left: -100%;
+    }
+
+    45% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+@keyframes headingPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.015);
+    }
+}
+
+
+@keyframes tableEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes infoBoxBorder {
+
+    0% {
+        background-position:
+            0 0,
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            0 0,
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0 0,
+            0% 50%;
+    }
+}
+
+
+@keyframes titleSweep {
+
+    0% {
+        left: -100%;
+    }
+
+    45% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+@keyframes discoverEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes warningBar {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 200%;
+    }
+}
+
+
+@keyframes faqEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes faqBadge {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sarkarijobs-info,
+    .sj-faq {
+        width: 90%;
+    }
+
+    .sj-info-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .top-pages-table {
+        width: 90%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .sarkarijobs-info {
+
+        width: 92%;
+
+        margin: 28px auto;
+
+        padding: 20px 12px;
+
+        border-radius: 13px;
+    }
+
+    .top-description {
+
+        padding: 12px 11px;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+    .top-description h3 {
+
+        font-size: 13px;
+
+        padding: 7px 12px;
+
+        margin: 10px 0 12px;
+    }
+
+    .top-pages-table {
+
+        width: 100%;
+
+        font-size: 12px;
+    }
+
+    .top-pages-table td {
+
+        padding: 8px 6px;
+    }
+
+    .top-pages-table td a {
+
+        font-size: 11.5px;
+    }
+
+    .sj-info-sections {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+
+        margin-top: 18px;
+    }
+
+    .sj-info-title {
+
+        padding: 9px 9px;
+
+        font-size: 12.5px;
+    }
+
+    .sj-info-content {
+
+        padding: 9px;
+
+        font-size: 11.5px;
+
+        line-height: 1.6;
+    }
+
+    .sj-discover {
+
+        margin-top: 18px;
+
+        padding: 12px;
+    }
+
+    .sj-discover-title {
+
+        font-size: 15px;
+    }
+
+    .sj-discover-item {
+
+        padding: 9px 10px;
+
+        font-size: 12px;
+    }
+
+    .sj-disclaimer {
+
+        padding: 12px 12px 12px 16px;
+
+        font-size: 11.5px;
+    }
+
+    .sj-faq {
+
+        width: 92%;
+
+        margin:
+            30px auto 45px;
+    }
+
+    .sj-faq-header {
+
+        font-size: 20px;
+
+        margin-bottom: 14px;
+    }
+
+    .faq-question {
+
+        padding: 11px;
+
+        font-size: 12.5px;
+    }
+
+    .faq-icon {
+
+        min-width: 25px;
+
+        height: 25px;
+
+        font-size: 12px;
+    }
+
+    .faq-answer {
+
+        padding:
+            0 12px 13px 48px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .sj-info-sections {
+
+        gap: 7px;
+    }
+
+    .sj-info-title {
+
+        font-size: 11.5px;
+    }
+
+    .sj-info-content {
+
+        font-size: 11px;
+    }
+
+    .top-pages-table td {
+
+        padding: 7px 4px;
+    }
+}

@@ -1,0 +1,53 @@
+<nav class="main-navbar">
+
+    <div class="container">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+        <ul class="nav-menu" id="navMenu">
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/latest-jobs/">Latest Jobs</a></li>
+
+            <li><a href="/result/ ">Result</a></li>
+
+            <li><a href="/admit-card/">Admit Card</a></li>
+
+            <li><a href="/answer-key/">Answer Key</a></li>
+
+            <li><a href="/syllabus/">Syllabus</a></li>
+
+            <li><a href="/admission/">Admission</a></li>
+
+            <a href="{% url 'contact' %}">Contact</a>
+
+        </ul>
+       <div class="nav-search">
+
+    <div class="search-box" id="searchBox">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Jobs..."
+            autocomplete="off"
+        >
+
+        <button type="button" id="searchToggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </div>
+
+    <div id="searchSuggestions"></div>
+
+</div>
+
+    </div>
+
+</nav>

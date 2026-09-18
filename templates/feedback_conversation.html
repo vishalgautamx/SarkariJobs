@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}
+Feedback Conversation | SarkariJobs
+{% endblock %}
+
+{% block content %}
+
+<div class="sj-conversation-wrapper">
+
+    <div class="sj-conversation-box">
+
+        <div class="sj-conversation-header">
+            <h2>
+                <i class="fa-solid fa-comments"></i>
+                Feedback Conversation
+            </h2>
+
+            <p>
+                You can continue this conversation with SarkariJobs.
+            </p>
+        </div>
+
+
+        <div class="sj-original-feedback">
+
+            <div class="sj-message-label">
+                You
+            </div>
+
+            <div class="sj-message">
+                {% if feedback.message %}
+                    {{ feedback.message|linebreaksbr }}
+                {% else %}
+                    No message provided.
+                {% endif %}
+            </div>
+
+            <div class="sj-message-time">
+                {{ feedback.created_at|date:"d M Y, h:i A" }}
+            </div>
+
+        </div>
+
+
+        <div class="sj-replies">
+
+            {% for reply in replies %}
+
+                <div class="
+                    sj-chat-message
+                    {% if reply.sender == 'admin' %}
+                        sj-admin-message
+                    {% else %}
+                        sj-user-message
+                    {% endif %}
+                ">
+
+                    <div class="sj-chat-sender">
+
+                        {% if reply.sender == "admin" %}
+                            <i class="fa-solid fa-shield-halved"></i>
+                            SarkariJobs
+                        {% else %}
+                            <i class="fa-solid fa-user"></i>
+                            You
+                        {% endif %}
+
+                    </div>
+
+                    <div class="sj-chat-text">
+                        {{ reply.message|linebreaksbr }}
+                    </div>
+
+                    <div class="sj-chat-time">
+                        {{ reply.created_at|date:"d M Y, h:i A" }}
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p class="sj-no-replies">
+                    No replies yet. We will respond as soon as possible.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="sj-reply-area">
+
+            <h3>Reply to SarkariJobs</h3>
+
+            <form
+                method="POST"
+                action="{% url 'feedback_user_reply' token=token %}"
+            >
+
+                {% csrf_token %}
+
+                <textarea
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Write your reply..."
+                ></textarea>
+
+                <button type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Reply
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

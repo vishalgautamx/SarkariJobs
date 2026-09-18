@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+
+{% block branding %}
+<div id="site-name">
+    <a href="{% url 'admin:index' %}">SarkariJobs Administration</a>
+</div>
+{% endblock %}
+
+{% block nav-global %}
+<div style="display:flex; align-items:center; gap:10px; margin-left:20px;">
+
+    <a href="/"
+       style="
+       display:inline-block;
+       padding:8px 16px;
+       background:#ffffff;
+       color:#111827;
+       border-radius:8px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:14px;
+       box-shadow:0 2px 8px rgba(0,0,0,.15);
+       ">
+        🏠 User UI
+    </a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,245 @@
+
+{% extends "base.html" %}
+
+
+<!-- =========================================================
+     SEO TITLE
+========================================================= -->
+
+{% block title %}
+{{ post.title }} | SarkariJobs
+{% endblock %}
+
+
+<!-- =========================================================
+     META DESCRIPTION
+========================================================= -->
+
+{% block meta_description %}
+
+{% if post.short_description %}
+{{ post.short_description|striptags|truncatechars:155 }}
+{% else %}
+
+{{ post.title }} - Check latest government job details,
+important dates, eligibility, vacancy, application fee,
+selection process and official links on SarkariJobs.
+
+{% endif %}
+
+{% endblock %}
+
+
+<!-- =========================================================
+     OPEN GRAPH TITLE
+========================================================= -->
+
+{% block og_title %}
+{{ post.title }} | SarkariJobs
+{% endblock %}
+
+
+<!-- =========================================================
+     OPEN GRAPH DESCRIPTION
+========================================================= -->
+
+{% block og_description %}
+
+{% if post.short_description %}
+{{ post.short_description|striptags|truncatechars:200 }}
+{% else %}
+
+Latest information about {{ post.title }},
+including important dates, eligibility, vacancy
+and official application links.
+
+{% endif %}
+
+{% endblock %}
+
+
+<!-- =========================================================
+     PAGE CONTENT
+========================================================= -->
+
+{% block content %}
+
+<div class="post-page">
+
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
+
+    <nav aria-label="breadcrumb" class="post-breadcrumb">
+
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+            </li>
+
+            <li class="breadcrumb-item">
+                <a href="{% url 'latest_jobs' %}">
+                    Sarkari Jobs
+                </a>
+            </li>
+
+            <li class="breadcrumb-item active"
+                aria-current="page">
+
+                {{ post.title }}
+
+            </li>
+
+        </ol>
+
+    </nav>
+
+
+    <!-- =====================================================
+         JOB HEADER
+    ====================================================== -->
+
+    <div class="post-header">
+
+        <h1>
+            {{ post.title }}
+        </h1>
+
+        <p class="post-meta">
+
+            Published Date:
+            <time datetime="{{ post.created_at|date:'c' }}">
+                {{ post.created_at|date:"d/m/Y" }}
+            </time>
+
+            {% if post.updated_at %}
+
+            | Updated:
+
+            <time datetime="{{ post.updated_at|date:'c' }}">
+                {{ post.updated_at|date:"d/m/Y" }}
+            </time>
+
+            {% endif %}
+
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         SHORT DESCRIPTION
+    ====================================================== -->
+
+    {% if post.short_description %}
+
+    <div class="post-intro">
+
+        {{ post.short_description }}
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         IMPORTANT DATES
+    ====================================================== -->
+
+    {% if post.application_start or post.application_last_date or post.exam_date %}
+
+    <section class="job-section">
+
+        <h2>Important Dates</h2>
+
+        <div class="job-table">
+
+            {% if post.application_start %}
+
+            <div class="job-row">
+
+                <div>
+                    Application Start Date
+                </div>
+
+                <div>
+                    {{ post.application_start }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.application_last_date %}
+
+            <div class="job-row">
+
+                <div>
+                    Last Date to Apply
+                </div>
+
+                <div>
+                    {{ post.application_last_date }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.exam_date %}
+
+            <div class="job-row">
+
+                <div>
+                    Exam Date
+                </div>
+
+                <div>
+                    {{ post.exam_date }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         APPLICATION FEE
+    ====================================================== -->
+
+    {% if post.general_fee or post.sc_st_fee or post.female_fee %}
+
+    <section class="job-section">
+
+        <h2>Application Fee</h2>
+
+        <div class="job-table">
+
+            {% if post.general_fee %}
+
+            <div class="job-row">
+
+                <div>
+                    General / OBC
+                </div>
+
+                <div>
+                    {{ post.general_fee }}
+                </div>
+
+            </div>
+
+            {% endif %}
+

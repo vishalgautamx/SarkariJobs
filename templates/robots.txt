@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /search/
+
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml

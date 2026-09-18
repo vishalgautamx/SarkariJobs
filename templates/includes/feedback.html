@@ -1,0 +1,785 @@
+<style>
+/* ==========================================
+   SARKARIJOBS - COMPACT FEEDBACK BOX
+   ========================================== */
+
+.sj-feedback-section {
+    width: 100%;
+    padding: 25px 12px;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.sj-feedback-box {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+
+    animation: sjFeedbackUp .55s ease both;
+    transition: .3s ease;
+}
+
+.sj-feedback-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.09);
+}
+
+
+/* ---------- HEADER ---------- */
+
+.sj-feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.sj-feedback-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+    background: #111827;
+    color: #fff;
+
+    font-size: 16px;
+
+    animation: sjIconPulse 2.5s ease-in-out infinite;
+}
+
+.sj-feedback-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.sj-feedback-header p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #777;
+}
+
+
+/* ---------- RATING BOXES ---------- */
+
+.sj-feedback-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sj-feedback-option {
+    cursor: pointer;
+}
+
+.sj-feedback-option input {
+    display: none;
+}
+
+.sj-feedback-option span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 5px;
+
+    background: #fff;
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+
+/* Hover */
+
+.sj-feedback-option span:hover {
+    transform: translateY(-2px);
+    border-color: #111827;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+
+/* Selected */
+
+.sj-feedback-option input:checked + span {
+    background: #111827;
+    color: #fff;
+    border-color: #111827;
+
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(0,0,0,.15);
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+.sj-feedback-textarea {
+    width: 100%;
+    min-height: 80px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 6px;
+
+    outline: none;
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    box-sizing: border-box;
+
+    transition: all .25s ease;
+}
+
+.sj-feedback-textarea::placeholder {
+    color: #999;
+}
+
+.sj-feedback-textarea:focus {
+    border-color: #111827;
+
+    box-shadow:
+        0 0 0 2px rgba(17,24,39,.07);
+
+    transform: translateY(-1px);
+}
+
+
+/* ---------- SUBMIT BUTTON ---------- */
+
+.sj-feedback-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 10px;
+
+    padding: 8px 15px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #111827;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.sj-feedback-submit:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+}
+
+.sj-feedback-submit:active {
+    transform: scale(.97);
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes sjFeedbackUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes sjIconPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .sj-feedback-section {
+        padding: 18px 8px;
+    }
+
+    .sj-feedback-box {
+        padding: 15px;
+        border-radius: 7px;
+    }
+
+    .sj-feedback-header h3 {
+        font-size: 16px;
+    }
+
+    .sj-feedback-header p {
+        font-size: 11px;
+    }
+
+    .sj-feedback-buttons {
+        gap: 6px;
+    }
+
+    .sj-feedback-option span {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .sj-feedback-textarea {
+        min-height: 70px;
+    }
+
+    .sj-feedback-submit {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+/* =====================================================
+   SARKARIJOBS FEEDBACK BOX
+   PREMIUM ANIMATED RED BUBBLES
+   ===================================================== */
+
+.sj-feedback-section {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ---------- BACKGROUND BUBBLES ---------- */
+
+.sj-feedback-section::before,
+.sj-feedback-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(1px);
+}
+
+/* BIG LEFT BUBBLE */
+.sj-feedback-section::before {
+    width: 260px;
+    height: 260px;
+    left: -125px;
+    top: -80px;
+    background: rgba(220, 38, 38, 0.055);
+
+    animation:
+        sjFeedbackBubbleLeft
+        15s
+        ease-in-out
+        infinite;
+}
+
+/* BIG RIGHT BUBBLE */
+.sj-feedback-section::after {
+    width: 230px;
+    height: 230px;
+    right: -110px;
+    bottom: -90px;
+    background: rgba(239, 68, 68, 0.045);
+
+    animation:
+        sjFeedbackBubbleRight
+        18s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------- FEEDBACK CARD ---------- */
+
+.sj-feedback-box {
+    position: relative;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(220, 38, 38, 0.10);
+    border-radius: 12px;
+
+    padding: 20px 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07),
+        0 2px 8px rgba(220, 38, 38, 0.04);
+
+    overflow: hidden;
+
+    animation: sjFeedbackAppear .55s ease both;
+}
+
+
+/* ---------- SMALL INTERNAL BUBBLE ---------- */
+
+.sj-feedback-box::before {
+    content: "";
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -45px;
+    top: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(220, 38, 38, 0.025);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation:
+        sjFeedbackSmallBubble
+        11s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.sj-feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sj-feedback-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+.sj-feedback-header p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* ---------- ICON ---------- */
+
+.sj-feedback-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(220, 38, 38, 0.08);
+    color: #dc2626;
+
+    font-size: 18px;
+
+    animation: sjFeedbackIcon 3s ease-in-out infinite;
+}
+
+
+/* ---------- RATING BUTTONS ---------- */
+
+.sj-feedback-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+.sj-feedback-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.sj-feedback-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sj-feedback-option span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #555;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        all .25s ease;
+}
+
+.sj-feedback-option span:hover {
+    border-color: rgba(220, 38, 38, 0.35);
+    color: #dc2626;
+    transform: translateY(-2px);
+}
+
+.sj-feedback-option input:checked + span {
+    background: rgba(220, 38, 38, 0.07);
+    border-color: #dc2626;
+    color: #dc2626;
+
+    box-shadow:
+        0 4px 12px rgba(220, 38, 38, 0.08);
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+.sj-feedback-textarea {
+    width: 100%;
+    min-height: 90px;
+
+    padding: 11px 12px;
+
+    border: 1px solid #e3e5e8;
+    border-radius: 8px;
+
+    background: #fafafa;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    color: #333;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.sj-feedback-textarea::placeholder {
+    color: #999;
+}
+
+.sj-feedback-textarea:focus {
+    background: #fff;
+
+    border-color: rgba(220, 38, 38, 0.45);
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.07);
+}
+
+
+/* ---------- SUBMIT BUTTON ---------- */
+
+.sj-feedback-submit {
+    margin-top: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #dc2626;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.sj-feedback-submit:hover {
+    background: #b91c1c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(220, 38, 38, 0.20);
+}
+
+.sj-feedback-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes sjFeedbackBubbleLeft {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate3d(35px, 20px, 0) scale(1.04);
+    }
+
+    50% {
+        transform: translate3d(70px, -5px, 0) scale(1.09);
+    }
+
+    75% {
+        transform: translate3d(30px, -25px, 0) scale(1.04);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+@keyframes sjFeedbackBubbleRight {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    30% {
+        transform: translate3d(-30px, -20px, 0) scale(1.05);
+    }
+
+    60% {
+        transform: translate3d(-65px, 10px, 0) scale(1.10);
+    }
+
+    80% {
+        transform: translate3d(-25px, 30px, 0) scale(1.04);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+@keyframes sjFeedbackSmallBubble {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: .6;
+    }
+
+    50% {
+        transform: translate(-35px, 25px) scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+@keyframes sjFeedbackAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes sjFeedbackIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .sj-feedback-section {
+        margin: 25px auto;
+        padding: 10px;
+    }
+
+    .sj-feedback-box {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .sj-feedback-header h3 {
+        font-size: 16px;
+    }
+
+    .sj-feedback-header p {
+        font-size: 12px;
+    }
+
+    .sj-feedback-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .sj-feedback-buttons {
+        flex-wrap: wrap;
+    }
+
+    .sj-feedback-option span {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .sj-feedback-submit {
+        width: 100%;
+    }
+}
+</style>
+<section class="sj-feedback-section">
+
+    <div class="sj-feedback-box">
+
+        <div class="sj-feedback-header">
+            <span class="sj-feedback-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+            </span>
+
+            <div>
+                <h3>Was this page helpful?</h3>
+                <p>Your feedback helps us improve SarkariJobs.</p>
+            </div>
+        </div>
+
+
+        <form method="POST" action="{% url 'feedback_submit' %}">
+
+            {% csrf_token %}
+
+            <input
+                type="hidden"
+                name="page_url"
+                value="{{ request.build_absolute_uri }}"
+            >
+
+
+            <div class="sj-feedback-buttons">
+
+                <label class="sj-feedback-option">
+                    <input
+                        type="radio"
+                        name="rating"
+                        value="Helpful"
+                        required
+                    >
+
+                    <span>
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        Yes, helpful
+                    </span>
+                </label>
+
+
+                <label class="sj-feedback-option">
+                    <input
+                        type="radio"
+                        name="rating"
+                        value="Not Helpful"
+                    >
+
+                    <span>
+                        <i class="fa-regular fa-thumbs-down"></i>
+                        Not helpful
+                    </span>
+                </label>
+
+            </div>
+
+
+            <textarea
+                name="message"
+                class="sj-feedback-textarea"
+                placeholder="How can we improve this page?"
+                rows="4"
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="sj-feedback-submit"
+            >
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit Feedback
+            </button>
+
+        </form>
+
+    </div>
+
+</section>

@@ -1,0 +1,407 @@
+/* =========================
+   SARKARIJOBS HEADER
+========================= */
+
+.top-header {
+    background: linear-gradient(
+        135deg,
+        #640101 0%,
+        #a50000 45%,
+        #d41414 100%
+    );
+
+    padding: 15px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background glow */
+
+.top-header::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+
+    width: 220px;
+    height: 220px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.top-header::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -60px;
+
+    width: 220px;
+    height: 220px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* Header wrapper */
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #fff;
+
+    background: #fff;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Logo hover */
+
+.logo img:hover {
+    transform: rotate(-5deg) scale(1.06);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Site title */
+
+.site-title {
+    text-align: left;
+}
+.site-title h1 {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.1;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffd166 35%,
+        #ff6b6b 65%,
+        #ffffff 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    background-size: 200% auto;
+    animation: titleGradient 4s linear infinite;
+}
+
+@keyframes titleGradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
+/* Website URL */
+
+.site-title p {
+    color: #ffecec;
+
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    opacity: 0.95;
+}
+.logo {
+    perspective: 800px;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid rgba(255,255,255,0.8);
+
+    animation: logoFlip 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+}
+
+@keyframes logoFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    45% {
+        transform: rotateY(180deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    95% {
+        transform: rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .logo img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .logo {
+        perspective: 600px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+    .site-title h1 {
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 10px 0;
+    }
+
+    .header-wrapper {
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+        border-width: 2px;
+    }
+
+    .site-title h1 {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+
+    .site-title p {
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-top: 3px;
+    }
+}
+
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+
+    .header-wrapper {
+        gap: 9px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .site-title h1 {
+        font-size: 23px;
+    }
+
+    .site-title p {
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+ADMIN LOGIN BUTTON
+========================================= */
+
+.header-wrapper {
+position: relative;
+}
+
+.admin-login {
+margin-left: auto;
+position: relative;
+z-index: 5;
+}
+
+.admin-login a {
+position: relative;
+overflow: hidden;
+
+
+display: inline-flex;
+align-items: center;
+gap: 7px;
+
+padding: 9px 15px;
+
+color: #fff;
+text-decoration: none;
+
+font-size: 12px;
+font-weight: 600;
+
+border: 1px solid rgba(255,255,255,.55);
+border-radius: 7px;
+
+background: rgba(255,255,255,.10);
+
+box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+
+backdrop-filter: blur(5px);
+
+transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+
+
+}
+
+/* Shine animation */
+
+.admin-login a::before {
+content: "";
+
+
+position: absolute;
+top: 0;
+left: -120%;
+
+width: 65%;
+height: 100%;
+
+background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+);
+
+transform: skewX(-20deg);
+
+animation: adminShine 3.5s ease-in-out infinite;
+
+
+}
+
+.admin-login a:hover {
+transform: translateY(-2px);
+
+
+background: rgba(255,255,255,.20);
+
+box-shadow:
+    0 7px 20px rgba(0,0,0,.25);
+
+
+}
+
+.admin-login a span {
+font-size: 13px;
+
+
+transition:
+    transform .3s ease;
+
+
+}
+
+.admin-login a:hover span {
+transform: rotate(-12deg) scale(1.15);
+}
+
+@keyframes adminShine {
+
+
+0%, 45% {
+    left: -120%;
+}
+
+65%, 100% {
+    left: 140%;
+}
+
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+
+.admin-login {
+    margin-left: auto;
+}
+
+.admin-login a {
+    padding: 7px 9px;
+
+    font-size: 10px;
+
+    border-radius: 6px;
+}
+
+.admin-login a span {
+    font-size: 11px;
+}
+
+
+}

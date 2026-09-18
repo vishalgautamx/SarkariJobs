@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'admin/css/sarkarijobs-admin.css' %}">
+{{ block.super }}
+
+<link rel="stylesheet"
+      href="{% static 'css/admin-custom.css' %}">
+{% endblock %}
+
+{% block branding %}
+<div class="sj-admin-brand">
+    <span class="sj-admin-logo">SJ</span>
+
+    <div>
+        <div class="sj-admin-title">SarkariJobs Administration</div>
+
+        <div class="sj-admin-subtitle">
+            Administration Panel
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block nav-global %}
+<div class="sj-admin-glow"></div>
+{% endblock %}

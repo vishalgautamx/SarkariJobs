@@ -1,0 +1,431 @@
+{% extends "base.html" %}
+
+{% block title %}SarkariJobs - Latest Government Jobs, Results & Admit Cards{% endblock %}
+
+{% block content %}
+
+<!-- INTRO SECTION -->
+<section class="intro-section">
+
+    <p>
+        <strong>SarkariJobs™ Official website</strong> since 2009 –
+        Get Online Form, Results, Admit Card, Answer Key, Syllabus,
+        Career News, Sarkari Yojana, Scholarship, Sarkari Notice etc.
+    </p>
+
+    <div class="live-badge">
+        <span>●</span> LIVE
+    </div>
+
+    <a href="#" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        Join WhatsApp Channel
+    </a>
+
+</section>
+
+
+<!-- TOOLS -->
+<section class="tools-section">
+
+    <h2>SarkariJobs Updates</h2>
+
+    <div class="quick-grid">
+
+    {% for job in latest_jobs %}
+
+    <a href="{% url 'post_detail' job.slug %}"
+       class="quick-box
+       {% cycle 'box-red' 'box-orange' 'box-pink' 'box-blue' 'box-olive' 'box-lightblue' 'box-darkred' 'box-green' %}">
+
+        {{ job.title }}
+
+    </a>
+
+    {% empty %}
+
+    <div class="quick-empty">
+        No Latest Jobs Available
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</section>
+
+<!-- THREE COLUMN SECTION -->
+<section class="home-sections">
+
+    <!-- ROW 1 -->
+
+    <!-- RESULT -->
+    <div class="result-box">
+        <div class="section-title">Result</div>
+
+        <ul>
+            {% for post in results %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Result Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'result' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- ADMIT CARD -->
+    <div class="result-box">
+        <div class="section-title">Admit Card</div>
+
+        <ul>
+            {% for post in admit_cards %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Admit Card Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'admit_card' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- LATEST JOBS -->
+    <div class="result-box">
+        <div class="section-title">Latest Jobs</div>
+
+        <ul>
+            {% for post in latest_jobs %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Latest Jobs Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'latest_jobs' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- ROW 2 -->
+
+    <!-- ANSWER KEY -->
+    <div class="result-box">
+        <div class="section-title">Answer Key</div>
+
+        <ul>
+            {% for post in answer_keys %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Answer Key Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'answer_key' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- DOCUMENTS -->
+    <div class="result-box">
+        <div class="section-title">Documents</div>
+
+        <ul>
+            {% for post in documents %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Documents Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'documents' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- ADMISSION -->
+    <div class="result-box">
+        <div class="section-title">Admission</div>
+
+        <ul>
+            {% for post in admissions %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Admission Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'admission' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- ROW 3 -->
+
+    <!-- 10TH / ITI JOBS -->
+    <div class="result-box">
+        <div class="section-title">10th/ITI Jobs</div>
+
+        <ul>
+            {% for post in iti_jobs %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No 10th/ITI Jobs Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'iti_jobs' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- OUTSOURCING JOBS -->
+    <div class="result-box">
+        <div class="section-title">Outsourcing Jobs</div>
+
+        <ul>
+            {% for post in outsourcing_jobs %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Outsourcing Jobs Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'outsourcing_jobs' %}">View More</a>
+        </div>
+    </div>
+
+
+    <!-- SYLLABUS -->
+    <div class="result-box">
+        <div class="section-title">Syllabus</div>
+
+        <ul>
+            {% for post in syllabus %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Syllabus Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'syllabus' %}">View More</a>
+        </div>
+    </div>
+
+</section>
+<!-- =========================
+     SARKARIJOBS INFORMATION
+========================= -->
+<!-- =========================================
+     SARKARIJOBS LOWER HOME SECTION
+========================================= -->
+
+<section class="sarkarijobs-info">
+
+    <!-- TOP INTRO -->
+
+    <div class="top-description">
+
+        <p>
+            <strong>SarkariJobs™ 2026</strong> -
+            Find Latest Sarkari Job Vacancies And Sarkari Exam Results
+            At SarkariJobs.Com. Get All The Information You Need On Govt
+            Jobs And Online Form, Exam, Results, Admit Card In One Place.
+        </p>
+
+        <h3>
+            ****** Top SarkariJobs Pages ******
+        </h3>
+
+       <table class="top-pages-table">
+
+    {% regroup top_pages by row as page_rows %}
+
+    {% for row in page_rows %}
+
+    <tr>
+
+        {% for page in row.list %}
+
+        <td>
+
+            {% if page.url %}
+
+            <a href="{{ page.url }}"
+               target="_blank"
+               rel="noopener noreferrer">
+                {{ page.title }}
+            </a>
+
+            {% else %}
+
+                {{ page.title }}
+
+            {% endif %}
+
+        </td>
+
+        {% endfor %}
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+    </div>
+
+
+    <!-- =====================================
+         DYNAMIC INFORMATION SECTIONS
+    ====================================== -->
+
+    <div class="sj-info-sections">
+
+        {% for section in home_sections %}
+
+        <article class="sj-info-box">
+
+            <div class="sj-info-title">
+
+                <span>
+                    {{ section.title }}
+                </span>
+
+            </div>
+
+            <div class="sj-info-content">
+
+                {{ section.content|linebreaks }}
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="sj-empty">
+            No Information Available
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- =====================================
+         DYNAMIC DISCLAIMER
+    ====================================== -->
+
+    <div class="sj-disclaimer">
+
+        <span class="disclaimer-icon">●</span>
+
+        This Website Is Not Associated With Official Or Government
+        Websites. All Information Provided Is For General Informational
+        Purposes Only. Users Are Advised To Verify Information From
+        Official Notifications Of The Concerned Department Before
+        Relying Upon It.
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     DYNAMIC FAQ
+========================================= -->
+
+<section class="sj-faq">
+
+    <div class="sj-faq-header">
+        <span>FAQ</span>
+        <strong>– SarkariJobs</strong>
+    </div>
+
+
+    <div class="sj-faq-list">
+
+        {% for faq in faqs %}
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+
+                <span class="faq-icon">?</span>
+
+                <span>
+                    {{ faq.question }}
+                </span>
+
+            </div>
+
+            <div class="faq-answer">
+
+                {{ faq.answer|linebreaks }}
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="sj-empty">
+            No FAQ Available
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+{% endblock %}

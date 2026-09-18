@@ -1,0 +1,114 @@
+{% extends "admin/index.html" %}
+
+{% load admin_stats %}
+
+{% block extrastyle %}
+{{ block.super }}
+
+<style>
+/* ================================
+   SARKARIJOBS DASHBOARD STATISTICS
+   ================================ */
+
+.sj-stats-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.sj-stat-card {
+    padding: 22px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border: 1px solid #e5e7eb;
+    transition: 0.3s ease;
+}
+
+.sj-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+}
+
+.sj-stat-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.sj-stat-number {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+}
+
+@media (max-width: 900px) {
+    .sj-stats-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .sj-stats-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+{% dashboard_stats as stats %}
+
+<div class="sj-stats-wrapper">
+
+    <!-- TOTAL POSTS -->
+    <a href="{% url 'admin:posts_post_changelist' %}" class="sj-stat-card">
+        <div class="sj-stat-title">Total Posts</div>
+        <div class="sj-stat-number">{{ stats.total_posts }}</div>
+    </a>
+
+    <!-- LATEST JOBS -->
+    <a href="{% url 'admin:posts_post_changelist' %}?category__exact=Latest%20Jobs"
+       class="sj-stat-card">
+        <div class="sj-stat-title">Latest Jobs</div>
+        <div class="sj-stat-number">{{ stats.latest_jobs }}</div>
+    </a>
+
+    <!-- RESULTS -->
+    <a href="{% url 'admin:posts_post_changelist' %}?category__exact=Result"
+       class="sj-stat-card">
+        <div class="sj-stat-title">Results</div>
+        <div class="sj-stat-number">{{ stats.results }}</div>
+    </a>
+
+    <!-- ADMIT CARDS -->
+    <a href="{% url 'admin:posts_post_changelist' %}?category__exact=Admit%20Card"
+       class="sj-stat-card">
+        <div class="sj-stat-title">Admit Cards</div>
+        <div class="sj-stat-number">{{ stats.admit_cards }}</div>
+    </a>
+
+    <!-- FAQ -->
+    <a href="{% url 'admin:core_faq_changelist' %}" class="sj-stat-card">
+        <div class="sj-stat-title">FAQs</div>
+        <div class="sj-stat-number">{{ stats.faqs }}</div>
+    </a>
+
+    <!-- DISCOVER ITEMS -->
+    <a href="{% url 'admin:core_discoveritem_changelist' %}"
+       class="sj-stat-card">
+        <div class="sj-stat-title">Discover Items</div>
+        <div class="sj-stat-number">{{ stats.discover_items }}</div>
+    </a>
+
+</div>
+
+{{ block.super }}
+
+{% endblock %}

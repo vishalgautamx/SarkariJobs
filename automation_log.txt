@@ -1,0 +1,16 @@
+SarkariJobs automation started...
+Automated posts found: 2
+Checked: Test Railway Automated Recruitment 2026
+Checked: Junior Secretariat Assistant/ Lower Division Clerk Grade Limited Departmental Competitive Examination, 2025: Uploading of Tentative Answer Keys along with Candidates’ Response Sheet(s)
+Automation completed. 2 post(s) checked.
+SarkariJobs automation started...
+Fetching latest SSC official notices...
+SSC notices received from API: 10
+SSC notices received: 10
+SSC created: 0
+SSC updated: 10
+Automated posts found: 2
+Checked: Test Railway Automated Recruitment 2026
+Checked: Senior Secretariat Assistant/ Upper Division Clerk Grade Limited Departmental Competitive Examination, 2025: Uploading of Tentative Answer Keys along with Candidates’ Response Sheet(s).
+Automation completed.
+2 automated post(s) checked.

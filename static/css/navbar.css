@@ -1,0 +1,285 @@
+.main-navbar{
+    background:#011a4b;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.main-navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.nav-menu{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size: 15px;
+}
+
+.nav-menu li:last-child{
+    border:none;
+}
+.nav-menu a{
+    position: relative;
+    display: inline-block;   /* block ki jagah inline-block */
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.nav-menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width .35s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
+    width: 100%;
+}
+
+.nav-menu a:hover{
+    color:#FFD700;
+}
+.menu-toggle{
+    display:none;
+    width:45px;
+    height:45px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    position:static;
+    padding:0;
+}
+
+.menu-toggle span{
+    position:absolute;
+    left:8px;
+    width:30px;
+    height:3px;
+    background:#fff;
+    border-radius:1px;
+    transition:all .50s ease;
+}
+
+.menu-toggle span:nth-child(1){
+    top:12px;
+}
+
+.menu-toggle span:nth-child(2){
+    top:21px;
+}
+
+.menu-toggle span:nth-child(3){
+    top:30px;
+}
+
+/* X Animation */
+
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:21px;
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg);
+    top:21px;
+}
+/* =========================
+   COMPACT SEARCH
+========================= */
+
+.nav-search {
+    position: relative;
+    z-index: 9999;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.search-box input {
+    width: 0;
+    height: 30px;
+    opacity: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+    border-radius: 16px;
+
+    transition: all .3s ease;
+}
+
+/* Search open */
+
+.search-box.active input {
+    width: 145px;
+    opacity: 1;
+
+    padding: 0 34px 0 10px;
+
+    border: 1px solid rgba(255,255,255,.45);
+
+    background: rgba(255,255,255,.12);
+}
+
+/* Placeholder */
+
+.search-box input::placeholder {
+    color: rgba(255,255,255,.7);
+}
+
+/* Search button */
+
+.search-box button {
+    position: absolute;
+    right: 0;
+
+    width: 32px;
+    height: 32px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+    color: #fff;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+
+    z-index: 2;
+
+    transition: .25s ease;
+}
+
+.search-box button:hover {
+    background: rgba(255,255,255,.15);
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SMALL SUGGESTION BOX
+========================= */
+
+#searchSuggestions {
+
+    position: absolute;
+
+    top: 40px;
+    right: 0;
+
+    width: 190px;
+
+    background: #fff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 22px rgba(0,0,0,.20);
+
+    overflow: hidden;
+
+    display: none;
+
+    z-index: 10000;
+}
+
+
+/* JS se content aaye to show */
+
+#searchSuggestions.show {
+    display: block;
+}
+
+
+/* Suggestion */
+
+#searchSuggestions a {
+
+    display: block;
+
+    padding: 8px 10px;
+
+    color: #222;
+
+    background: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    border-bottom: 1px solid #eee;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    transition: background .2s ease;
+}
+
+#searchSuggestions a:hover {
+    background: #f3f3f3;
+}
+
+
+/* No result */
+
+#searchSuggestions .no-result {
+
+    display: block;
+
+    padding: 9px 10px;
+
+    color: #777;
+
+    background: #fff;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .search-box.active input {
+        width: 125px;
+    }
+
+    #searchSuggestions {
+        width: 175px;
+    }
+
+}
