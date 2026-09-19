@@ -8,7 +8,7 @@
 <section class="intro-section">
 
     <p>
-        <strong>SarkariJobs™ Official website</strong> since 2009 –
+        <strong>SarkariJobs™ Official website</strong> since 2026 –
         Get Online Form, Results, Admit Card, Answer Key, Syllabus,
         Career News, Sarkari Yojana, Scholarship, Sarkari Notice etc.
     </p>
@@ -79,6 +79,26 @@
             <a href="{% url 'result' %}">View More</a>
         </div>
     </div>
+     <!-- LATEST JOBS -->
+    <div class="result-box">
+        <div class="section-title">Latest Jobs</div>
+
+        <ul>
+            {% for post in latest_jobs %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No Latest Jobs Available</li>
+            {% endfor %}
+        </ul>
+
+        <div class="view-more">
+            <a href="{% url 'latest_jobs' %}">View More</a>
+        </div>
+    </div>
 
 
     <!-- ADMIT CARD -->
@@ -103,26 +123,7 @@
     </div>
 
 
-    <!-- LATEST JOBS -->
-    <div class="result-box">
-        <div class="section-title">Latest Jobs</div>
-
-        <ul>
-            {% for post in latest_jobs %}
-            <li>
-                <a href="{% url 'post_detail' post.slug %}">
-                    {{ post.title }}
-                </a>
-            </li>
-            {% empty %}
-            <li>No Latest Jobs Available</li>
-            {% endfor %}
-        </ul>
-
-        <div class="view-more">
-            <a href="{% url 'latest_jobs' %}">View More</a>
-        </div>
-    </div>
+   
 
 
     <!-- ROW 2 -->
