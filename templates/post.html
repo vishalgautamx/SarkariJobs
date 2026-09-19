@@ -206,7 +206,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                        rel="noopener noreferrer"
                        class="date-link">
 
-                        View Result
+                        Check Result
 
                     </a>
 
@@ -337,6 +337,37 @@ Latest information about {{ post.title }}, including important dates, eligibilit
             </div>
 
             {% endif %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         EXAM INFORMATION
+    ====================================================== -->
+
+    {% if post.exam_mode %}
+
+    <section class="job-section">
+
+        <h2>Exam Information</h2>
+
+        <div class="job-table">
+
+            <div class="job-row">
+
+                <div>
+                    Exam Mode
+                </div>
+
+                <div>
+                    {{ post.exam_mode }}
+                </div>
+
+            </div>
 
         </div>
 

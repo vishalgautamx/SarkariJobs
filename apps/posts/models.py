@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -61,26 +62,38 @@ class Post(models.Model):
         max_length=100,
         blank=True
     )
+
     ews_fee = models.CharField(
-                max_length=100,
-                blank=True
-            )
+        max_length=100,
+        blank=True
+    )
 
     sc_st_fee = models.CharField(
         max_length=100,
         blank=True
     )
+
     obc_fee = models.CharField(
         max_length=100,
         blank=True
     )
-    
+
     female_fee = models.CharField(
         max_length=100,
         blank=True
     )
 
     payment_mode = models.CharField(
+        max_length=20,
+        choices=[
+            ("Online", "Online"),
+            ("Offline", "Offline"),
+        ],
+        blank=True
+    )
+
+    # Exam Mode
+    exam_mode = models.CharField(
         max_length=20,
         choices=[
             ("Online", "Online"),
@@ -159,6 +172,7 @@ class Post(models.Model):
         null=True,
         blank=True
     )
+
     # Dates
     created_at = models.DateTimeField(
         auto_now_add=True
@@ -170,6 +184,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class DiscoverItem(models.Model):
 

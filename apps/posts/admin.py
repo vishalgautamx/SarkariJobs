@@ -1,3 +1,4 @@
+
 from django.contrib import admin
 
 from .models import Post, DiscoverItem
@@ -79,6 +80,9 @@ class PostAdmin(admin.ModelAdmin):
                     "application_start",
                     "application_last_date",
                     "exam_date",
+                    "exam_date_link",
+                    "result_date",
+                    "result_link",
                 )
             }
         ),
@@ -88,8 +92,20 @@ class PostAdmin(admin.ModelAdmin):
             {
                 "fields": (
                     "general_fee",
+                    "ews_fee",
+                    "obc_fee",
                     "sc_st_fee",
                     "female_fee",
+                    "payment_mode",
+                )
+            }
+        ),
+
+        (
+            "Exam Information",
+            {
+                "fields": (
+                    "exam_mode",
                 )
             }
         ),
