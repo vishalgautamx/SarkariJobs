@@ -62,7 +62,6 @@ def category_posts(request, category):
 # =========================================================
 # INDIVIDUAL POST PAGE
 # =========================================================
-
 def post_detail(request, slug):
 
     post = get_object_or_404(
@@ -71,14 +70,21 @@ def post_detail(request, slug):
         is_published=True
     )
 
+    related_posts = Post.objects.filter(
+        category=post.category,
+        is_published=True
+    ).exclude(
+        id=post.id
+    ).order_by("-created_at")[:6]
+
     return render(
         request,
         "post.html",
         {
             "post": post,
+            "related_posts": related_posts,
         }
     )
-
 
 # =========================================================
 # HOME PAGE

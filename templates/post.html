@@ -655,5 +655,36 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
 
 </div>
+<!-- RELATED JOBS -->
+{% if related_posts %}
+<section class="related-jobs-section">
 
+    <h2 class="section-title">
+        Related Jobs
+    </h2>
+
+    <div class="related-jobs-list">
+
+        {% for related in related_posts %}
+        <a href="{% url 'post_detail' related.slug %}" class="related-job-item">
+
+            <div class="related-job-content">
+                <h3>{{ related.title }}</h3>
+
+                {% if related.short_description %}
+                <p>{{ related.short_description|truncatewords:20 }}</p>
+                {% endif %}
+            </div>
+
+            <span class="related-job-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </span>
+
+        </a>
+        {% endfor %}
+
+    </div>
+
+</section>
+{% endif %}
 {% endblock %}
