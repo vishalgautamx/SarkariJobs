@@ -1,15 +1,21 @@
-
 from django.contrib import admin
+from .models import Post, DiscoverItem, PostFAQ
 
-from .models import Post, DiscoverItem
+
+class PostFAQInline(admin.TabularInline):
+    model = PostFAQ
+    extra = 2
+    fields = (
+        "question",
+        "answer",
+        "order",
+        "is_active",
+    )
+    ordering = ("order",)
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-
-    # =====================================================
-    # LIST PAGE
-    # =====================================================
 
     list_display = (
         "title",
@@ -55,9 +61,9 @@ class PostAdmin(admin.ModelAdmin):
         "last_checked",
     )
 
-    # =====================================================
-    # POST FORM
-    # =====================================================
+    inlines = [
+        PostFAQInline,
+    ]
 
     fieldsets = (
 
@@ -66,9 +72,11 @@ class PostAdmin(admin.ModelAdmin):
             {
                 "fields": (
                     "title",
+                    "featured_image",
                     "slug",
                     "category",
                     "short_description",
+                    "total_vacancies",
                 )
             }
         ),
@@ -79,6 +87,8 @@ class PostAdmin(admin.ModelAdmin):
                 "fields": (
                     "application_start",
                     "application_last_date",
+                    "correction_date",
+                    "admit_card_date",
                     "exam_date",
                     "exam_date_link",
                     "result_date",
@@ -140,6 +150,15 @@ class PostAdmin(admin.ModelAdmin):
         ),
 
         (
+            "Post Details",
+            {
+                "fields": (
+                    "post_details",
+                )
+            }
+        ),
+
+        (
             "Selection Process",
             {
                 "fields": (
@@ -149,7 +168,25 @@ class PostAdmin(admin.ModelAdmin):
         ),
 
         (
-            "Additional Information",
+            "Syllabus",
+            {
+                "fields": (
+                    "syllabus",
+                )
+            }
+        ),
+
+        (
+            "How To Apply",
+            {
+                "fields": (
+                    "how_to_apply",
+                )
+            }
+        ),
+
+        (
+            "Additional Content",
             {
                 "fields": (
                     "content",
@@ -168,10 +205,6 @@ class PostAdmin(admin.ModelAdmin):
             }
         ),
 
-        # =================================================
-        # AUTOMATION
-        # =================================================
-
         (
             "Automation",
             {
@@ -185,10 +218,6 @@ class PostAdmin(admin.ModelAdmin):
             }
         ),
 
-        # =================================================
-        # SYSTEM DATES
-        # =================================================
-
         (
             "System Information",
             {
@@ -198,6 +227,7 @@ class PostAdmin(admin.ModelAdmin):
                 )
             }
         ),
+
     )
 
 
@@ -230,6 +260,43 @@ class DiscoverItemAdmin(admin.ModelAdmin):
     ordering = (
         "order",
         "-created_at",
+    )
+
+    readonly_fields = (
+        "created_at",
+    )
+
+
+@admin.register(PostFAQ)
+class PostFAQAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "question",
+        "post",
+        "order",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+        "post",
+    )
+
+    search_fields = (
+        "question",
+        "answer",
+        "post__title",
+    )
+
+    list_editable = (
+        "order",
+        "is_active",
+    )
+
+    ordering = (
+        "post",
+        "order",
     )
 
     readonly_fields = (

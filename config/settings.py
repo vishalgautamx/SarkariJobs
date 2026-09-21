@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django_ckeditor_5",
     'apps.posts',
     'apps.core',
 
@@ -163,5 +164,33 @@ MAILERS = {
 }
 
 # ==============================
-# EMAIL CONFIGURATION
+# text format
 # ==============================
+CKEDITOR_5_CONFIGS = {
+    "extends": {
+        "toolbar": [
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "|",
+            "fontColor",
+            "fontBackgroundColor",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "|",
+            "alignment",
+            "|",
+            "link",
+            "insertTable",
+            "blockQuote",
+            "horizontalLine",
+            "|",
+            "undo",
+            "redo",
+        ],
+    },
+}

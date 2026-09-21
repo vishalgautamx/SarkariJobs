@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}
@@ -60,31 +59,35 @@ Latest information about {{ post.title }}, including important dates, eligibilit
         </ol>
 
     </nav>
+
+
+    <!-- BREADCRUMB SCHEMA -->
+
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Sarkari Jobs",
-            "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'latest_jobs' %}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{ post.title|escapejs }}"
-        }
-    ]
-}
-</script>
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Sarkari Jobs",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'latest_jobs' %}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ post.title|escapejs }}"
+            }
+        ]
+    }
+    </script>
 
 
     <!-- =====================================================
@@ -97,9 +100,26 @@ Latest information about {{ post.title }}, including important dates, eligibilit
             {{ post.title }}
         </h1>
 
+
+        {% if post.featured_image %}
+
+        <div class="post-featured-image">
+
+            <img
+                src="{{ post.featured_image.url }}"
+                alt="{{ post.title }}"
+                loading="eager"
+            >
+
+        </div>
+
+        {% endif %}
+
+
         <p class="post-meta">
 
             Published Date:
+
             <time datetime="{{ post.created_at|date:'c' }}">
                 {{ post.created_at|date:"d/m/Y" }}
             </time>
@@ -138,13 +158,14 @@ Latest information about {{ post.title }}, including important dates, eligibilit
          IMPORTANT DATES
     ====================================================== -->
 
-    {% if post.application_start or post.application_last_date or post.exam_date or post.result_date %}
+    {% if post.application_start or post.application_last_date or post.correction_date or post.admit_card_date or post.exam_date or post.result_date %}
 
     <section class="job-section">
 
         <h2>Important Dates</h2>
 
         <div class="job-table">
+
 
             {% if post.application_start %}
 
@@ -173,6 +194,40 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
                 <div>
                     {{ post.application_last_date }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.correction_date %}
+
+            <div class="job-row">
+
+                <div>
+                    Correction Date
+                </div>
+
+                <div>
+                    {{ post.correction_date }}
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if post.admit_card_date %}
+
+            <div class="job-row">
+
+                <div>
+                    Admit Card Date
+                </div>
+
+                <div>
+                    {{ post.admit_card_date }}
                 </div>
 
             </div>
@@ -243,6 +298,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
             {% endif %}
 
+
         </div>
 
     </section>
@@ -261,6 +317,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
         <h2>Application Fee</h2>
 
         <div class="job-table">
+
 
             {% if post.general_fee %}
 
@@ -363,6 +420,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
             {% endif %}
 
+
         </div>
 
     </section>
@@ -413,6 +471,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
         <div class="job-table">
 
+
             {% if post.minimum_age %}
 
             <div class="job-row">
@@ -421,8 +480,8 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                     Minimum Age
                 </div>
 
-                <div>
-                    {{ post.minimum_age }}
+                <div class="rich-field-content">
+                    {{ post.minimum_age|safe }}
                 </div>
 
             </div>
@@ -438,8 +497,8 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                     Maximum Age
                 </div>
 
-                <div>
-                    {{ post.maximum_age }}
+                <div class="rich-field-content">
+                    {{ post.maximum_age|safe }}
                 </div>
 
             </div>
@@ -455,13 +514,14 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                     Age Relaxation
                 </div>
 
-                <div>
-                    {{ post.age_relaxation|linebreaksbr }}
+                <div class="rich-field-content">
+                    {{ post.age_relaxation|safe }}
                 </div>
 
             </div>
 
             {% endif %}
+
 
         </div>
 
@@ -471,7 +531,28 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
 
     <!-- =====================================================
-         VACANCY
+         POST DETAILS
+    ====================================================== -->
+
+    {% if post.post_details %}
+
+    <section class="job-section">
+
+        <h2>Post Details</h2>
+
+        <div class="job-content rich-field-content">
+
+            {{ post.post_details|safe }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         VACANCY DETAILS
     ====================================================== -->
 
     {% if post.vacancy_details %}
@@ -480,9 +561,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
         <h2>Vacancy Details</h2>
 
-        <div class="job-content">
+        <div class="job-content rich-field-content">
 
-            {{ post.vacancy_details|linebreaks }}
+            {{ post.vacancy_details|safe }}
 
         </div>
 
@@ -501,9 +582,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
         <h2>Eligibility</h2>
 
-        <div class="job-content">
+        <div class="job-content rich-field-content">
 
-            {{ post.eligibility|linebreaks }}
+            {{ post.eligibility|safe }}
 
         </div>
 
@@ -522,9 +603,51 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
         <h2>Selection Process</h2>
 
-        <div class="job-content">
+        <div class="job-content rich-field-content">
 
-            {{ post.selection_process|linebreaks }}
+            {{ post.selection_process|safe }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         SYLLABUS
+    ====================================================== -->
+
+    {% if post.syllabus %}
+
+    <section class="job-section">
+
+        <h2>Syllabus</h2>
+
+        <div class="job-content rich-field-content">
+
+            {{ post.syllabus|safe }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         HOW TO APPLY
+    ====================================================== -->
+
+    {% if post.how_to_apply %}
+
+    <section class="job-section">
+
+        <h2>How To Apply</h2>
+
+        <div class="job-content rich-field-content">
+
+            {{ post.how_to_apply|safe }}
 
         </div>
 
@@ -543,9 +666,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
         <h2>About {{ post.title }}</h2>
 
-        <div class="job-content">
+        <div class="job-content rich-field-content">
 
-            {{ post.content|linebreaks }}
+            {{ post.content|safe }}
 
         </div>
 
@@ -565,6 +688,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
         <h2>Important Links</h2>
 
         <div class="important-links">
+
 
             {% if post.apply_link %}
 
@@ -606,6 +730,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
             </a>
 
             {% endif %}
+
 
         </div>
 
@@ -655,8 +780,141 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
 
 </div>
-<!-- RELATED JOBS -->
+
+
+<section class="post-faq-section" aria-labelledby="post-faq-heading">
+
+    <div class="post-faq-header">
+        <span>FAQ</span>
+        <strong>– {{ post.title }}</strong>
+    </div>
+
+    <div class="post-faq-list">
+
+        {% for faq in post.faqs.all %}
+
+            {% if faq.is_active %}
+
+            <article class="post-faq-item">
+
+                <button
+                    type="button"
+                    class="post-faq-question"
+                    aria-expanded="false"
+                    aria-controls="post-faq-answer-{{ faq.id }}"
+                >
+
+                    <span class="post-faq-icon">?</span>
+
+                    <span class="post-faq-question-text">
+                        {{ faq.question }}
+                    </span>
+
+                    <span class="post-faq-arrow">
+                        +
+                    </span>
+
+                </button>
+
+                <div
+                    id="post-faq-answer-{{ faq.id }}"
+                    class="post-faq-answer"
+                    hidden
+                >
+                    <div class="rich-field-content">
+                        {{ faq.answer|safe }}
+                    </div>
+                </div>
+
+            </article>
+
+            {% endif %}
+
+        {% empty %}
+
+            <div class="post-faq-empty">
+                No FAQ Available
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqButtons = document.querySelectorAll(".post-faq-question");
+
+    faqButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const faqItem = button.closest(".post-faq-item");
+            const answer = faqItem.querySelector(".post-faq-answer");
+            const arrow = faqItem.querySelector(".post-faq-arrow");
+
+            const isOpen = button.getAttribute("aria-expanded") === "true";
+
+
+            /* Close all FAQs */
+
+            faqButtons.forEach(function (otherButton) {
+
+                const otherItem =
+                    otherButton.closest(".post-faq-item");
+
+                const otherAnswer =
+                    otherItem.querySelector(".post-faq-answer");
+
+                const otherArrow =
+                    otherItem.querySelector(".post-faq-arrow");
+
+
+                otherButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                otherAnswer.hidden = true;
+
+                otherItem.classList.remove("active");
+
+                otherArrow.textContent = "+";
+
+            });
+
+
+            /* Open clicked FAQ */
+
+            if (!isOpen) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                answer.hidden = false;
+
+                faqItem.classList.add("active");
+
+                arrow.textContent = "−";
+
+            }
+
+        });
+
+    });
+
+});
+</script>
+<!-- =====================================================
+     RELATED JOBS
+====================================================== -->
+
 {% if related_posts %}
+
 <section class="related-jobs-section">
 
     <h2 class="section-title">
@@ -665,26 +923,44 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
     <div class="related-jobs-list">
 
+
         {% for related in related_posts %}
-        <a href="{% url 'post_detail' related.slug %}" class="related-job-item">
+
+        <a href="{% url 'post_detail' related.slug %}"
+           class="related-job-item">
 
             <div class="related-job-content">
-                <h3>{{ related.title }}</h3>
+
+                <h3>
+                    {{ related.title }}
+                </h3>
+
 
                 {% if related.short_description %}
-                <p>{{ related.short_description|truncatewords:20 }}</p>
+
+                <p>
+                    {{ related.short_description|truncatewords:20 }}
+                </p>
+
                 {% endif %}
+
             </div>
 
+
             <span class="related-job-arrow">
+
                 <i class="fas fa-chevron-right"></i>
+
             </span>
 
         </a>
+
         {% endfor %}
+
 
     </div>
 
 </section>
+
 {% endif %}
 {% endblock %}

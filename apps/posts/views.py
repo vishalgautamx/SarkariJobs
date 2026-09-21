@@ -62,13 +62,22 @@ def category_posts(request, category):
 # =========================================================
 # INDIVIDUAL POST PAGE
 # =========================================================
+# =========================================================
+# INDIVIDUAL POST PAGE
+# =========================================================
+
 def post_detail(request, slug):
 
     post = get_object_or_404(
         Post,
-        slug=slug,
-        is_published=True
+        slug=slug
     )
+
+    # Unpublished posts should not be visible publicly.
+    # Admin/staff can still preview them.
+    if not post.is_published and not request.user.is_staff:
+        from django.http import Http404
+        raise Http404("Post not found")
 
     related_posts = Post.objects.filter(
         category=post.category,

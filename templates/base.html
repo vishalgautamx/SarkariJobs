@@ -120,8 +120,10 @@
 
 {% include 'includes/header.html' %}
 {% include 'includes/navbar.html' %}
-{% block content %}
-{% endblock %}
+<main id="main-content">
+    {% block content %}
+    {% endblock %}
+</main>
 
 {% include 'includes/feedback.html' %}
 

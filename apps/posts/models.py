@@ -1,5 +1,5 @@
-
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Post(models.Model):
@@ -16,29 +16,58 @@ class Post(models.Model):
         ("Syllabus", "Syllabus"),
     ]
 
+    # ==========================================================
     # Basic Information
-    title = models.CharField(max_length=255)
+    # ==========================================================
 
-    slug = models.SlugField(unique=True)
+    title = models.CharField(
+        max_length=255
+    )
+
+    slug = models.SlugField(
+        unique=True
+    )
 
     category = models.CharField(
         max_length=100,
         choices=CATEGORY_CHOICES
     )
 
-    short_description = models.TextField(blank=True)
-    total_vacancies = models.CharField(
-    max_length=100,
-    blank=True
-)
+    featured_image = models.ImageField(
+        upload_to="post-images/",
+        blank=True,
+        null=True
+    )
 
+    short_description = models.TextField(
+        blank=True
+    )
+
+    total_vacancies = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    # ==========================================================
     # Important Dates
+    # ==========================================================
+
     application_start = models.CharField(
         max_length=100,
         blank=True
     )
 
     application_last_date = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    correction_date = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    admit_card_date = models.CharField(
         max_length=100,
         blank=True
     )
@@ -61,7 +90,10 @@ class Post(models.Model):
         blank=True
     )
 
+    # ==========================================================
     # Application Fee
+    # ==========================================================
+
     general_fee = models.CharField(
         max_length=100,
         blank=True
@@ -96,7 +128,10 @@ class Post(models.Model):
         blank=True
     )
 
+    # ==========================================================
     # Exam Mode
+    # ==========================================================
+
     exam_mode = models.CharField(
         max_length=20,
         choices=[
@@ -106,42 +141,101 @@ class Post(models.Model):
         blank=True
     )
 
+    # ==========================================================
     # Age Limit
-    minimum_age = models.CharField(
-        max_length=100,
+    # ==========================================================
+
+    minimum_age = CKEditor5Field(
+    "Minimum Age",
+    config_name="extends",
+    blank=True
+    )
+
+    maximum_age = CKEditor5Field(
+    "Maximum Age",
+    config_name="extends",
+    blank=True
+)
+
+    age_relaxation = CKEditor5Field(
+    "Age Relaxation",
+    config_name="extends",
+    blank=True
+    )
+
+    # ==========================================================
+    # Vacancy Details
+    # ==========================================================
+    vacancy_details = CKEditor5Field(
+        "Vacancy Details",
+        config_name="extends",
         blank=True
     )
 
-    maximum_age = models.CharField(
-        max_length=100,
-        blank=True
-    )
-
-    age_relaxation = models.TextField(
-        blank=True
-    )
-
-    # Vacancy
-    vacancy_details = models.TextField(
-        blank=True
-    )
-
+    # ==========================================================
     # Eligibility
-    eligibility = models.TextField(
+    # ==========================================================
+
+    eligibility = CKEditor5Field(
+        "Eligibility",
+        config_name="extends",
         blank=True
     )
 
+    # ==========================================================
     # Selection Process
-    selection_process = models.TextField(
+    # ==========================================================
+
+    selection_process = CKEditor5Field(
+        "Selection Process",
+        config_name="extends",
         blank=True
     )
 
+    # ==========================================================
+    # Post Details
+    # ==========================================================
+
+    post_details = CKEditor5Field(
+        "Post Details",
+        config_name="extends",
+        blank=True
+    )
+
+    # ==========================================================
+    # Syllabus
+    # ==========================================================
+
+    syllabus = CKEditor5Field(
+        "Syllabus",
+        config_name="extends",
+        blank=True
+    )
+
+    # ==========================================================
+    # How To Apply
+    # ==========================================================
+
+    how_to_apply = CKEditor5Field(
+        "How To Apply",
+        config_name="extends",
+        blank=True
+    )
+
+    # ==========================================================
     # Additional Content
-    content = models.TextField(
+    # ==========================================================
+
+    content = CKEditor5Field(
+        "Content",
+        config_name="extends",
         blank=True
     )
 
+    # ==========================================================
     # Important Links
+    # ==========================================================
+
     apply_link = models.URLField(
         blank=True
     )
@@ -154,7 +248,10 @@ class Post(models.Model):
         blank=True
     )
 
+    # ==========================================================
     # Automation
+    # ==========================================================
+
     source_name = models.CharField(
         max_length=100,
         blank=True
@@ -177,7 +274,10 @@ class Post(models.Model):
         blank=True
     )
 
-    # Dates
+    # ==========================================================
+    # System Dates
+    # ==========================================================
+
     created_at = models.DateTimeField(
         auto_now_add=True
     )
@@ -186,26 +286,73 @@ class Post(models.Model):
         auto_now=True
     )
 
+    # ==========================================================
+    # String Representation
+    # ==========================================================
+
     def __str__(self):
         return self.title
 
 
 class DiscoverItem(models.Model):
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(
+        max_length=100
+    )
 
-    link = models.URLField(blank=True)
+    link = models.URLField(
+        blank=True
+    )
 
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(
+        default=True
+    )
 
-    order = models.PositiveIntegerField(default=0)
+    order = models.PositiveIntegerField(
+        default=0
+    )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ["order", "-created_at"]
+        ordering = [
+            "order",
+            "-created_at"
+        ]
+
         verbose_name = "Discover Item"
+
         verbose_name_plural = "Discover Items"
+class PostFAQ(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name="faqs"
+    )
+
+    question = models.CharField(max_length=500)
+
+    answer = CKEditor5Field(
+        "Answer",
+        config_name="extends",
+        blank=True
+    )
+
+    order = models.PositiveIntegerField(default=0)
+
+    is_active = models.BooleanField(default=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "Post FAQ"
+        verbose_name_plural = "Post FAQs"
+
+    def __str__(self):
+        return f"{self.post.title} - {self.question}"
