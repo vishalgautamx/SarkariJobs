@@ -27,6 +27,10 @@ class Post(models.Model):
     )
 
     short_description = models.TextField(blank=True)
+    total_vacancies = models.CharField(
+    max_length=100,
+    blank=True
+)
 
     # Important Dates
     application_start = models.CharField(

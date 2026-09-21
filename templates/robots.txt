@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /search/
 
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+Sitemap: https://sarkarijobs-gxul.onrender.com/sitemap.xml

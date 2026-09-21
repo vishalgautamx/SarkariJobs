@@ -3221,7 +3221,7 @@ justify-content: center;
 
         grid-template-columns: repeat(2, 1fr);
 
-        gap: 5px;
+        gap: 1px;
 
         margin: 22px auto;
     }
@@ -3230,7 +3230,7 @@ justify-content: center;
         width: 100%;
         max-height: none;
 
-        border-radius: 9px;
+        border-radius: 3px;
     }
 
     .result-box .section-title {

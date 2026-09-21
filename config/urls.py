@@ -1,5 +1,6 @@
 from django.contrib.sitemaps.views import sitemap
 from apps.posts.sitemaps import PostSitemap, StaticViewSitemap
+from apps.scraper.views import create_job_draft
 from django.views.generic import TemplateView
 from django.contrib import admin
 from apps.core.views import home, contact
@@ -51,6 +52,11 @@ urlpatterns = [
         {"category": "Result"},
         name="result"
     ),
+    path(
+    "scraper/create-draft/",
+    create_job_draft,
+    name="create_job_draft",
+),
 
     path(
         "admit-card/",
