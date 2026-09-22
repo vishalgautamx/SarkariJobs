@@ -1,0 +1,614 @@
+{% extends "base.html" %}
+
+{% block title %}Terms & Conditions - SarkariJobs{% endblock %}
+
+{% block meta_description %}
+Read the Terms and Conditions of SarkariJobs. Learn about website usage, recruitment information, external links, intellectual property, user responsibilities and limitations.
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .legal-page {
+        padding: 45px 15px 60px;
+        background: linear-gradient(135deg, #f8faff, #fff5f5);
+        min-height: 100vh;
+    }
+
+    .legal-container {
+        max-width: 1050px;
+        margin: auto;
+    }
+
+    .legal-hero {
+        background: linear-gradient(135deg, #b30000, #e53935);
+        color: #fff;
+        padding: 45px 30px;
+        border-radius: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 12px 35px rgba(179, 0, 0, 0.20);
+        animation: fadeDown 0.7s ease;
+    }
+
+    .legal-hero h1 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .legal-hero p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.95;
+    }
+
+    .last-updated {
+        display: inline-block;
+        background: rgba(255,255,255,0.15);
+        padding: 7px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    .legal-card {
+        background: #fff;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 16px;
+        box-shadow: 0 5px 22px rgba(0, 0, 0, 0.07);
+        border-left: 4px solid #d40000;
+        animation: fadeUp 0.7s ease;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .legal-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    }
+
+    .legal-card h2 {
+        color: #b30000;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .legal-card h3 {
+        color: #222;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .legal-card p,
+    .legal-card li {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .legal-card ul {
+        padding-left: 22px;
+    }
+
+    .highlight-box {
+        background: #fff7f7;
+        border: 1px solid #ffd6d6;
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .warning-box {
+        background: #fff8e6;
+        border: 1px solid #ffe0a3;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .contact-box {
+        text-align: center;
+        background: linear-gradient(135deg, #fff1f1, #fff);
+    }
+
+    .contact-box a {
+        color: #c40000;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .contact-box a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .legal-page {
+            padding: 25px 10px 40px;
+        }
+
+        .legal-hero {
+            padding: 32px 18px;
+            border-radius: 15px;
+        }
+
+        .legal-hero h1 {
+            font-size: 29px;
+        }
+
+        .legal-card {
+            padding: 22px 18px;
+        }
+
+        .legal-card h2 {
+            font-size: 21px;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<section class="legal-page">
+
+
+<div class="legal-container">
+
+    <!-- Hero -->
+    <div class="legal-hero">
+
+        <h1>Terms &amp; Conditions</h1>
+
+        <p>
+            Please read these terms carefully before using SarkariJobs.
+        </p>
+
+        <span class="last-updated">
+            Last Updated: September 22, 2026
+        </span>
+
+    </div>
+
+
+    <!-- Introduction -->
+    <div class="legal-card">
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            Welcome to <strong>SarkariJobs</strong>. These Terms and
+            Conditions govern your use of the SarkariJobs website and
+            its content and services.
+        </p>
+
+        <p>
+            By accessing, browsing or using SarkariJobs, you agree to
+            comply with these Terms and Conditions.
+        </p>
+
+        <p>
+            If you do not agree with any part of these terms, please
+            discontinue use of the website.
+        </p>
+
+    </div>
+
+
+    <!-- About Website -->
+    <div class="legal-card">
+
+        <h2>2. About SarkariJobs</h2>
+
+        <p>
+            SarkariJobs is an independent informational platform that
+            publishes information related to:
+        </p>
+
+        <ul>
+            <li>Government jobs</li>
+            <li>Recruitment notifications</li>
+            <li>Results</li>
+            <li>Admit cards</li>
+            <li>Answer keys</li>
+            <li>Admissions</li>
+            <li>Syllabus and examination information</li>
+            <li>Other employment and education-related updates</li>
+        </ul>
+
+        <p>
+            SarkariJobs is not a government department or government
+            authority.
+        </p>
+
+    </div>
+
+
+    <!-- Acceptance -->
+    <div class="legal-card">
+
+        <h2>3. Acceptance of Terms</h2>
+
+        <p>
+            By using this website, you confirm that you understand and
+            accept these Terms and Conditions, along with our Privacy
+            Policy and Disclaimer.
+        </p>
+
+        <p>
+            These terms apply to all visitors and users accessing the
+            publicly available content of SarkariJobs.
+        </p>
+
+    </div>
+
+
+    <!-- Website Usage -->
+    <div class="legal-card">
+
+        <h2>4. Permitted Use of Website</h2>
+
+        <p>
+            You may use SarkariJobs for lawful and personal informational
+            purposes.
+        </p>
+
+        <p>You agree that you will not:</p>
+
+        <ul>
+            <li>Use the website for unlawful purposes.</li>
+            <li>Attempt to damage or disrupt the website.</li>
+            <li>Attempt unauthorized access to website systems.</li>
+            <li>Introduce malicious software or harmful code.</li>
+            <li>Use automated methods to abuse website resources.</li>
+            <li>Attempt to interfere with other visitors' access.</li>
+            <li>Misuse contact or feedback forms.</li>
+            <li>Copy or reproduce website content for misleading purposes.</li>
+        </ul>
+
+    </div>
+
+
+    <!-- Recruitment Information -->
+    <div class="legal-card">
+
+        <h2>5. Recruitment and Job Information</h2>
+
+        <p>
+            SarkariJobs provides recruitment information for
+            informational purposes.
+        </p>
+
+        <p>
+            Information published on the website may include vacancy
+            details, eligibility requirements, important dates,
+            application fees, age limits, selection processes and
+            application links.
+        </p>
+
+        <p>
+            Recruitment organizations may modify their notifications,
+            deadlines, eligibility conditions, fees or other details.
+        </p>
+
+        <div class="warning-box">
+
+            <strong>Important:</strong>
+
+            <p>
+                Always read the latest official recruitment notification
+                and verify important details on the official website
+                before submitting an application or making a payment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- User Responsibility -->
+    <div class="legal-card">
+
+        <h2>6. User Responsibility</h2>
+
+        <p>
+            Visitors are responsible for verifying information before
+            taking any action based on content published on SarkariJobs.
+        </p>
+
+        <p>
+            This includes verifying:
+        </p>
+
+        <ul>
+            <li>Eligibility criteria</li>
+            <li>Application dates</li>
+            <li>Examination dates</li>
+            <li>Application fees</li>
+            <li>Age requirements</li>
+            <li>Required documents</li>
+            <li>Selection procedures</li>
+            <li>Official application links</li>
+        </ul>
+
+    </div>
+
+
+    <!-- External Links -->
+    <div class="legal-card">
+
+        <h2>7. External Websites and Links</h2>
+
+        <p>
+            SarkariJobs may provide links to third-party websites,
+            including official government websites, recruitment portals,
+            examination authorities, universities and other organizations.
+        </p>
+
+        <p>
+            These links are provided for visitor convenience and
+            informational purposes.
+        </p>
+
+        <p>
+            SarkariJobs does not control external websites and does not
+            guarantee their availability, accuracy, security or content.
+        </p>
+
+        <p>
+            When you visit an external website, you are subject to that
+            website's own terms, policies and conditions.
+        </p>
+
+    </div>
+
+
+    <!-- Intellectual Property -->
+    <div class="legal-card">
+
+        <h2>8. Intellectual Property</h2>
+
+        <p>
+            The design, layout, graphics, branding, original text and
+            other original materials created for SarkariJobs may be
+            protected by applicable intellectual property laws.
+        </p>
+
+        <p>
+            Government notifications, official documents, logos,
+            trademarks and materials belonging to third parties remain
+            the property of their respective owners.
+        </p>
+
+        <p>
+            You may not reproduce or redistribute original SarkariJobs
+            content in a way that misrepresents its source or purpose.
+        </p>
+
+    </div>
+
+
+    <!-- Accuracy -->
+    <div class="legal-card">
+
+        <h2>9. Accuracy and Availability</h2>
+
+        <p>
+            We make reasonable efforts to maintain useful and accurate
+            information.
+        </p>
+
+        <p>
+            However, SarkariJobs does not guarantee that all information
+            will always be complete, accurate, current or error-free.
+        </p>
+
+        <p>
+            The website may occasionally become unavailable because of
+            maintenance, technical problems, hosting issues or other
+            circumstances beyond our reasonable control.
+        </p>
+
+    </div>
+
+
+    <!-- No Guarantee -->
+    <div class="legal-card">
+
+        <h2>10. No Employment Guarantee</h2>
+
+        <p>
+            Information about a recruitment opportunity does not
+            guarantee employment, selection, examination success or
+            appointment.
+        </p>
+
+        <p>
+            Selection is determined by the concerned recruiting
+            organization according to its official rules and selection
+            process.
+        </p>
+
+    </div>
+
+
+    <!-- Advertising -->
+    <div class="legal-card">
+
+        <h2>11. Advertising and Third-Party Services</h2>
+
+        <p>
+            SarkariJobs may display advertisements through third-party
+            advertising networks.
+        </p>
+
+        <p>
+            The presence of an advertisement on SarkariJobs does not
+            necessarily constitute an endorsement of the advertised
+            product or service.
+        </p>
+
+        <p>
+            Third-party services may have their own terms and privacy
+            policies, which visitors should review before using those
+            services.
+        </p>
+
+    </div>
+
+
+    <!-- Limitation -->
+    <div class="legal-card">
+
+        <h2>12. Limitation of Liability</h2>
+
+        <p>
+            To the extent permitted by applicable law, SarkariJobs shall
+            not be responsible for losses or damages resulting from
+            reliance on information published on the website.
+        </p>
+
+        <p>
+            Visitors are responsible for independently verifying
+            important recruitment, examination and application information
+            with the relevant official authority.
+        </p>
+
+    </div>
+
+
+    <!-- Changes -->
+    <div class="legal-card">
+
+        <h2>13. Changes to These Terms</h2>
+
+        <p>
+            SarkariJobs may update or modify these Terms and Conditions
+            from time to time.
+        </p>
+
+        <p>
+            Updated terms will be published on this page along with a
+            revised "Last Updated" date.
+        </p>
+
+        <p>
+            Continued use of the website after changes are published
+            means that you acknowledge the updated terms.
+        </p>
+
+    </div>
+
+
+    <!-- Termination -->
+    <div class="legal-card">
+
+        <h2>14. Website Access and Termination</h2>
+
+        <p>
+            We reserve the right to restrict or suspend access to parts
+            of the website where reasonably necessary to protect the
+            website, its users, systems or content.
+        </p>
+
+        <p>
+            We may also remove or modify website content without prior
+            notice where necessary.
+        </p>
+
+    </div>
+
+
+    <!-- Privacy -->
+    <div class="legal-card">
+
+        <h2>15. Privacy Policy</h2>
+
+        <p>
+            Your use of SarkariJobs is also subject to our Privacy Policy,
+            which explains how information may be collected and handled.
+        </p>
+
+        <p>
+            Please review our
+            <a href="{% url 'privacy_policy' %}">
+                Privacy Policy
+            </a>
+            for additional information.
+        </p>
+
+    </div>
+
+
+    <!-- Disclaimer -->
+    <div class="legal-card">
+
+        <h2>16. Disclaimer</h2>
+
+        <p>
+            The information provided by SarkariJobs is subject to our
+            Disclaimer.
+        </p>
+
+        <p>
+            Please review our
+            <a href="{% url 'disclaimer' %}">
+                Disclaimer
+            </a>
+            for important information regarding recruitment updates,
+            external links and verification of information.
+        </p>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div class="legal-card contact-box">
+
+        <h2>17. Contact Us</h2>
+
+        <p>
+            If you have any questions regarding these Terms and Conditions,
+            please contact us.
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:Sarkarijobshere@gmail.com">
+                Sarkarijobshere@gmail.com
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

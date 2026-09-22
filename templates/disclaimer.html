@@ -1,0 +1,520 @@
+{% extends "base.html" %}
+
+{% block title %}Disclaimer - SarkariJobs{% endblock %}
+
+{% block meta_description %}
+SarkariJobs Disclaimer - Read important information about government job notifications, recruitment updates, results, admit cards, answer keys, admissions and external links.
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .legal-page {
+        padding: 45px 15px 60px;
+        background: linear-gradient(135deg, #f8faff, #fff5f5);
+        min-height: 100vh;
+    }
+
+    .legal-container {
+        max-width: 1050px;
+        margin: auto;
+    }
+
+    .legal-hero {
+        background: linear-gradient(135deg, #b30000, #e53935);
+        color: #fff;
+        padding: 45px 30px;
+        border-radius: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 12px 35px rgba(179, 0, 0, 0.20);
+        animation: fadeDown 0.7s ease;
+    }
+
+    .legal-hero h1 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .legal-hero p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.95;
+    }
+
+    .last-updated {
+        display: inline-block;
+        background: rgba(255,255,255,0.15);
+        padding: 7px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    .legal-card {
+        background: #fff;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 16px;
+        box-shadow: 0 5px 22px rgba(0, 0, 0, 0.07);
+        border-left: 4px solid #d40000;
+        animation: fadeUp 0.7s ease;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .legal-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    }
+
+    .legal-card h2 {
+        color: #b30000;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .legal-card h3 {
+        color: #222;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .legal-card p,
+    .legal-card li {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .legal-card ul {
+        padding-left: 22px;
+    }
+
+    .highlight-box {
+        background: #fff7f7;
+        border: 1px solid #ffd6d6;
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .warning-box {
+        background: #fff8e6;
+        border: 1px solid #ffe0a3;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .contact-box {
+        text-align: center;
+        background: linear-gradient(135deg, #fff1f1, #fff);
+    }
+
+    .contact-box a {
+        color: #c40000;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .contact-box a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .legal-page {
+            padding: 25px 10px 40px;
+        }
+
+        .legal-hero {
+            padding: 32px 18px;
+            border-radius: 15px;
+        }
+
+        .legal-hero h1 {
+            font-size: 29px;
+        }
+
+        .legal-card {
+            padding: 22px 18px;
+        }
+
+        .legal-card h2 {
+            font-size: 21px;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<section class="legal-page">
+
+
+<div class="legal-container">
+
+    <!-- Hero -->
+    <div class="legal-hero">
+
+        <h1>Disclaimer</h1>
+
+        <p>
+            Important information about the content and services provided
+            by SarkariJobs.
+        </p>
+
+        <span class="last-updated">
+            Last Updated: September 22, 2026
+        </span>
+
+    </div>
+
+
+    <!-- Introduction -->
+    <div class="legal-card">
+
+        <h2>1. General Disclaimer</h2>
+
+        <p>
+            The information provided on <strong>SarkariJobs</strong> is
+            intended for general informational and educational purposes.
+        </p>
+
+        <p>
+            SarkariJobs provides information related to government jobs,
+            recruitment notifications, results, admit cards, answer keys,
+            admissions, syllabi and other employment or examination-related
+            updates.
+        </p>
+
+        <p>
+            While we make reasonable efforts to provide useful and accurate
+            information, we do not guarantee that every piece of information
+            on the website will always be complete, accurate, current or
+            error-free.
+        </p>
+
+    </div>
+
+
+    <!-- Not Government Website -->
+    <div class="legal-card">
+
+        <h2>2. Not a Government Website</h2>
+
+        <div class="warning-box">
+
+            <strong>Important:</strong>
+
+            <p>
+                SarkariJobs is an independent informational website and is
+                not a government department, government authority or official
+                government website.
+            </p>
+
+        </div>
+
+        <p>
+            Names, logos, trademarks and other references belonging to
+            government departments, examination authorities, universities,
+            boards or other organizations remain the property of their
+            respective owners.
+        </p>
+
+        <p>
+            Visitors should always verify important information through the
+            relevant official website or official notification before taking
+            any action.
+        </p>
+
+    </div>
+
+
+    <!-- Job Information -->
+    <div class="legal-card">
+
+        <h2>3. Government Job and Recruitment Information</h2>
+
+        <p>
+            SarkariJobs publishes informational content relating to
+            recruitment notifications and government employment
+            opportunities.
+        </p>
+
+        <p>
+            Information may include:
+        </p>
+
+        <ul>
+            <li>Recruitment notifications</li>
+            <li>Number of vacancies</li>
+            <li>Important dates</li>
+            <li>Application fees</li>
+            <li>Age limits</li>
+            <li>Educational qualifications</li>
+            <li>Selection procedures</li>
+            <li>Exam information</li>
+            <li>Admit card updates</li>
+            <li>Result updates</li>
+            <li>Answer key information</li>
+            <li>Application links</li>
+        </ul>
+
+        <p>
+            Recruitment rules, dates, eligibility criteria and other details
+            can change at any time according to the concerned organization.
+        </p>
+
+        <p>
+            Applicants should carefully read the official notification
+            issued by the concerned recruiting organization before
+            submitting an application.
+        </p>
+
+    </div>
+
+
+    <!-- Accuracy -->
+    <div class="legal-card">
+
+        <h2>4. Accuracy of Information</h2>
+
+        <p>
+            We make reasonable efforts to research, organize and present
+            recruitment and examination information in a clear format.
+        </p>
+
+        <p>
+            However, errors, omissions, outdated information or changes
+            made by the original issuing authority may occasionally occur.
+        </p>
+
+        <p>
+            SarkariJobs does not guarantee the absolute accuracy,
+            completeness or timeliness of every information published on
+            the website.
+        </p>
+
+        <div class="highlight-box">
+
+            <strong>Always verify:</strong>
+
+            <p>
+                Before paying a fee, submitting an application, attending
+                an examination or relying on an important deadline, verify
+                the information from the official notification or official
+                website.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- External Links -->
+    <div class="legal-card">
+
+        <h2>5. External Links</h2>
+
+        <p>
+            SarkariJobs may provide links to external websites, including
+            official government websites, recruitment portals,
+            examination authorities, universities, boards and application
+            portals.
+        </p>
+
+        <p>
+            These links are provided for the convenience of visitors.
+        </p>
+
+        <p>
+            We do not control external websites and cannot guarantee their
+            availability, accuracy, security, privacy practices or content.
+        </p>
+
+        <p>
+            Once you leave SarkariJobs and visit an external website, the
+            policies and terms of that website will apply.
+        </p>
+
+    </div>
+
+
+    <!-- Application Responsibility -->
+    <div class="legal-card">
+
+        <h2>6. Application and Payment Responsibility</h2>
+
+        <p>
+            SarkariJobs does not normally process recruitment applications,
+            examination applications or application-fee payments on behalf
+            of recruiting organizations.
+        </p>
+
+        <p>
+            If a visitor follows an external application link, the
+            application is completed on the relevant external website.
+        </p>
+
+        <p>
+            Applicants are responsible for checking all information before
+            submitting forms or making payments.
+        </p>
+
+        <ul>
+            <li>Check the official notification.</li>
+            <li>Check the official application website.</li>
+            <li>Verify eligibility requirements.</li>
+            <li>Verify the application deadline.</li>
+            <li>Verify the application fee.</li>
+            <li>Keep payment and application records safely.</li>
+        </ul>
+
+    </div>
+
+
+    <!-- No Guarantee -->
+    <div class="legal-card">
+
+        <h2>7. No Guarantee of Employment</h2>
+
+        <p>
+            Publication of a recruitment notification on SarkariJobs does
+            not guarantee selection, employment, examination success or
+            appointment.
+        </p>
+
+        <p>
+            Selection depends on the eligibility requirements, examination,
+            merit, vacancies, document verification and selection procedure
+            determined by the concerned organization.
+        </p>
+
+    </div>
+
+
+    <!-- Copyright -->
+    <div class="legal-card">
+
+        <h2>8. Copyright and Content</h2>
+
+        <p>
+            SarkariJobs aims to provide original informational summaries
+            and useful explanations based on publicly available recruitment
+            information.
+        </p>
+
+        <p>
+            Official notifications, government documents, logos,
+            trademarks and other materials belonging to their respective
+            owners remain the property of their respective copyright or
+            trademark holders.
+        </p>
+
+        <p>
+            If you believe that any content on SarkariJobs infringes your
+            rights or has been published incorrectly, please contact us
+            with the relevant details so that we can review the matter.
+        </p>
+
+    </div>
+
+
+    <!-- Advertising -->
+    <div class="legal-card">
+
+        <h2>9. Advertising Disclaimer</h2>
+
+        <p>
+            SarkariJobs may display advertisements from third-party
+            advertising networks such as Google AdSense or other
+            advertising providers.
+        </p>
+
+        <p>
+            Advertisements may be selected or delivered by third-party
+            advertising systems based on factors determined by those
+            services.
+        </p>
+
+        <p>
+            The appearance of an advertisement on SarkariJobs does not
+            necessarily mean that SarkariJobs endorses the advertised
+            product, service or company.
+        </p>
+
+    </div>
+
+
+    <!-- Changes -->
+    <div class="legal-card">
+
+        <h2>10. Changes to This Disclaimer</h2>
+
+        <p>
+            SarkariJobs may update this Disclaimer from time to time.
+            Changes may be made to reflect updates to our website,
+            services, content or applicable requirements.
+        </p>
+
+        <p>
+            Any updated version will be published on this page with a
+            revised "Last Updated" date.
+        </p>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div class="legal-card contact-box">
+
+        <h2>11. Contact Us</h2>
+
+        <p>
+            If you have questions, corrections or concerns regarding
+            information published on SarkariJobs, please contact us.
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:Sarkarijobshere@gmail.com">
+                Sarkarijobshere@gmail.com
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+{% endblock %}

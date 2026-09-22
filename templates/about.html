@@ -1,0 +1,639 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - SarkariJobs | Government Jobs & Latest Updates{% endblock %}
+
+{% block meta_description %}
+Learn about SarkariJobs, an independent informational platform providing government job notifications, results, admit cards, answer keys, admissions, syllabus and recruitment updates.
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .about-page {
+        padding: 45px 15px 65px;
+        background: linear-gradient(135deg, #f8faff, #fff5f5);
+        min-height: 100vh;
+    }
+
+    .about-container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .about-hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #a90000, #e53935);
+        color: #fff;
+        padding: 60px 30px;
+        border-radius: 22px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 14px 40px rgba(169, 0, 0, 0.22);
+        animation: fadeDown 0.8s ease;
+    }
+
+    .about-hero::before,
+    .about-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.10);
+        animation: floatBubble 6s infinite ease-in-out;
+    }
+
+    .about-hero::before {
+        width: 170px;
+        height: 170px;
+        top: -70px;
+        left: -40px;
+    }
+
+    .about-hero::after {
+        width: 220px;
+        height: 220px;
+        bottom: -120px;
+        right: -50px;
+        animation-delay: 1.5s;
+    }
+
+    .about-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .about-logo {
+        width: 82px;
+        height: 82px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        background: #fff;
+        color: #c40000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        font-weight: 800;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+        animation: pulseLogo 2.5s infinite;
+    }
+
+    .about-hero h1 {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 12px;
+    }
+
+    .about-hero p {
+        max-width: 750px;
+        margin: auto;
+        font-size: 17px;
+        line-height: 1.7;
+        opacity: 0.96;
+    }
+
+    .about-card {
+        background: #fff;
+        padding: 32px;
+        margin-bottom: 22px;
+        border-radius: 17px;
+        box-shadow: 0 5px 24px rgba(0,0,0,0.07);
+        border-left: 4px solid #d40000;
+        animation: fadeUp 0.7s ease;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .about-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+    }
+
+    .about-card h2 {
+        color: #b30000;
+        font-size: 25px;
+        font-weight: 750;
+        margin-bottom: 16px;
+    }
+
+    .about-card h3 {
+        color: #222;
+        font-size: 19px;
+        margin-top: 22px;
+        margin-bottom: 10px;
+    }
+
+    .about-card p,
+    .about-card li {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .about-card ul {
+        padding-left: 22px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin: 25px 0;
+    }
+
+    .info-box {
+        background: #fff;
+        padding: 25px 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+    }
+
+    .info-icon {
+        width: 55px;
+        height: 55px;
+        margin: 0 auto 14px;
+        border-radius: 50%;
+        background: #fff0f0;
+        color: #c40000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .info-box h3 {
+        font-size: 18px;
+        color: #222;
+        margin: 0 0 8px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .trust-box {
+        background: linear-gradient(135deg, #fff7f7, #fff);
+        border: 1px solid #ffd7d7;
+        border-radius: 14px;
+        padding: 22px;
+        margin-top: 18px;
+    }
+
+    .contact-card {
+        text-align: center;
+        background: linear-gradient(135deg, #fff1f1, #fff);
+    }
+
+    .contact-card a {
+        color: #c40000;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .contact-card a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulseLogo {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.06);
+        }
+    }
+
+    @keyframes floatBubble {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-18px) rotate(8deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .about-page {
+            padding: 25px 10px 45px;
+        }
+
+        .about-hero {
+            padding: 45px 20px;
+            border-radius: 17px;
+        }
+
+        .about-hero h1 {
+            font-size: 31px;
+        }
+
+        .about-hero p {
+            font-size: 15px;
+        }
+
+        .about-card {
+            padding: 23px 18px;
+        }
+
+        .about-card h2 {
+            font-size: 21px;
+        }
+
+        .about-card p,
+        .about-card li {
+            font-size: 14px;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="about-page">
+
+
+<div class="about-container">
+
+    <!-- Hero -->
+    <div class="about-hero">
+
+        <div class="about-hero-content">
+
+            <div class="about-logo">
+                SJ
+            </div>
+
+            <h1>About SarkariJobs</h1>
+
+            <p>
+                SarkariJobs is an independent informational platform
+                created to make government job, recruitment and
+                examination-related information easier to discover,
+                understand and access.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Who We Are -->
+    <div class="about-card">
+
+        <h2>Who We Are</h2>
+
+        <p>
+            <strong>SarkariJobs</strong> is an independent online
+            information platform focused on government jobs,
+            recruitment notifications, examination updates and
+            education-related opportunities.
+        </p>
+
+        <p>
+            Our goal is to organize important recruitment and
+            examination information in a simple and easy-to-understand
+            format so that visitors can quickly find the information
+            they need.
+        </p>
+
+        <p>
+            We aim to provide clear information about vacancies,
+            eligibility, important dates, application fees, selection
+            processes, results, admit cards, answer keys and other
+            relevant updates.
+        </p>
+
+    </div>
+
+
+    <!-- What We Provide -->
+    <div class="about-card">
+
+        <h2>What We Provide</h2>
+
+        <p>
+            SarkariJobs covers multiple categories of government
+            recruitment and examination-related information.
+        </p>
+
+    </div>
+
+
+    <!-- Category Grid -->
+    <div class="info-grid">
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+
+            <h3>Latest Jobs</h3>
+
+            <p>
+                Government and other recruitment notifications,
+                vacancy details and application information.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-square-poll-vertical"></i>
+            </div>
+
+            <h3>Results</h3>
+
+            <p>
+                Updates related to examination results,
+                merit lists and result announcements.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-id-card"></i>
+            </div>
+
+            <h3>Admit Cards</h3>
+
+            <p>
+                Information and links related to examination
+                and recruitment admit cards.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-file-circle-check"></i>
+            </div>
+
+            <h3>Answer Keys</h3>
+
+            <p>
+                Answer key updates and examination-related
+                information.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <h3>Admissions</h3>
+
+            <p>
+                Admission-related notifications and
+                educational opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fas fa-book"></i>
+            </div>
+
+            <h3>Syllabus</h3>
+
+            <p>
+                Examination syllabus and preparation-related
+                information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Our Purpose -->
+    <div class="about-card">
+
+        <h2>Our Purpose</h2>
+
+        <p>
+            Government recruitment information can often be spread
+            across different official websites, notifications and
+            examination portals.
+        </p>
+
+        <p>
+            SarkariJobs aims to make this information easier to
+            discover by organizing important details in one place.
+        </p>
+
+        <p>
+            We focus on presenting information in a structured format
+            so visitors can quickly understand the important details
+            before visiting the relevant official website.
+        </p>
+
+    </div>
+
+
+    <!-- Information Verification -->
+    <div class="about-card">
+
+        <h2>Information &amp; Source Verification</h2>
+
+        <p>
+            We make reasonable efforts to research and organize
+            recruitment and examination information using publicly
+            available sources.
+        </p>
+
+        <p>
+            Wherever appropriate, we provide links to relevant
+            official websites, recruitment portals and authorities so
+            visitors can verify important information directly from
+            the original source.
+        </p>
+
+        <div class="trust-box">
+
+            <strong>Important for applicants:</strong>
+
+            <p>
+                Recruitment dates, eligibility requirements, vacancy
+                numbers, fees and other conditions can change.
+                Applicants should always read the latest official
+                notification before submitting an application or
+                making a payment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Independent Website -->
+    <div class="about-card">
+
+        <h2>Independent Information Platform</h2>
+
+        <p>
+            SarkariJobs is an independent informational website.
+            It is not a government department, government authority
+            or official government portal.
+        </p>
+
+        <p>
+            Government departments, examination authorities,
+            universities, boards and other organizations mentioned on
+            our website remain independent entities.
+        </p>
+
+        <p>
+            Their names, logos, trademarks and official documents
+            belong to their respective owners.
+        </p>
+
+    </div>
+
+
+    <!-- User First -->
+    <div class="about-card">
+
+        <h2>Our Approach</h2>
+
+        <p>
+            We aim to keep our website useful, simple and accessible
+            for visitors searching for employment and examination
+            information.
+        </p>
+
+        <ul>
+            <li>Organized recruitment information</li>
+            <li>Simple explanations</li>
+            <li>Clear important dates</li>
+            <li>Eligibility and vacancy details</li>
+            <li>Useful official links</li>
+            <li>Regular information updates where available</li>
+            <li>Mobile-friendly website experience</li>
+        </ul>
+
+    </div>
+
+
+    <!-- Accuracy -->
+    <div class="about-card">
+
+        <h2>Accuracy and Updates</h2>
+
+        <p>
+            We make reasonable efforts to keep published information
+            useful and updated.
+        </p>
+
+        <p>
+            However, official organizations may change recruitment
+            schedules, eligibility conditions, fees, vacancies or
+            other details after information has been published.
+        </p>
+
+        <p>
+            Therefore, visitors should verify important information
+            through the relevant official notification or official
+            website.
+        </p>
+
+    </div>
+
+
+    <!-- Feedback -->
+    <div class="about-card">
+
+        <h2>Feedback and Corrections</h2>
+
+        <p>
+            We value feedback from our visitors.
+        </p>
+
+        <p>
+            If you find an incorrect, outdated or incomplete piece of
+            information on SarkariJobs, you can contact us with the
+            relevant details.
+        </p>
+
+        <p>
+            We can then review the information and make appropriate
+            corrections where necessary.
+        </p>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div class="about-card contact-card">
+
+        <h2>Contact SarkariJobs</h2>
+
+        <p>
+            For questions, feedback, corrections or general inquiries,
+            please contact us by email.
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:Sarkarijobshere@gmail.com">
+                Sarkarijobshere@gmail.com
+            </a>
+        </p>
+
+        <p>
+            We appreciate your feedback and suggestions for improving
+            SarkariJobs.
+        </p>
+
+    </div>
+
+</div>
+</section>
+
+{% endblock %}

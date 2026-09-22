@@ -39,9 +39,10 @@ class Post(models.Model):
         null=True
     )
 
-    short_description = models.TextField(
-        blank=True
-    )
+    short_description = CKEditor5Field(
+    config_name="extends",
+    blank=True
+)
 
     total_vacancies = models.CharField(
         max_length=100,
@@ -201,7 +202,13 @@ class Post(models.Model):
         config_name="extends",
         blank=True
     )
-
+    answer_key = CKEditor5Field(
+    config_name="extends",
+    blank=True
+) 
+    answer_key_link = models.URLField(
+    blank=True
+)
     # ==========================================================
     # Syllabus
     # ==========================================================
@@ -211,6 +218,9 @@ class Post(models.Model):
         config_name="extends",
         blank=True
     )
+    syllabus_link = models.URLField(
+    blank=True
+)
 
     # ==========================================================
     # How To Apply

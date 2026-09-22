@@ -61,7 +61,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
     </nav>
 
 
-    <!-- BREADCRUMB SCHEMA -->
+    <!-- =====================================================
+         BREADCRUMB SCHEMA
+    ====================================================== -->
 
     <script type="application/ld+json">
     {
@@ -147,7 +149,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
     <div class="post-intro">
 
-        {{ post.short_description }}
+        {{ post.short_description|safe }}
 
     </div>
 
@@ -379,7 +381,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                 </div>
 
                 <div>
-                    {{ post.sc_st_fee }}
+                    SC / ST Fee
                 </div>
 
             </div>
@@ -481,7 +483,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                 </div>
 
                 <div class="rich-field-content">
+
                     {{ post.minimum_age|safe }}
+
                 </div>
 
             </div>
@@ -498,7 +502,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                 </div>
 
                 <div class="rich-field-content">
+
                     {{ post.maximum_age|safe }}
+
                 </div>
 
             </div>
@@ -515,7 +521,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                 </div>
 
                 <div class="rich-field-content">
+
                     {{ post.age_relaxation|safe }}
+
                 </div>
 
             </div>
@@ -615,20 +623,91 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
 
     <!-- =====================================================
-         SYLLABUS
+         SYLLABUS + SYLLABUS LINK
     ====================================================== -->
 
-    {% if post.syllabus %}
+    {% if post.syllabus or post.syllabus_link %}
 
     <section class="job-section">
 
         <h2>Syllabus</h2>
+
+
+        {% if post.syllabus %}
 
         <div class="job-content rich-field-content">
 
             {{ post.syllabus|safe }}
 
         </div>
+
+        {% endif %}
+
+
+        {% if post.syllabus_link %}
+
+        <div class="important-links">
+
+            <a href="{{ post.syllabus_link }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="important-link">
+
+                <i class="fas fa-book"></i>
+                Download Syllabus
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         ANSWER KEY + ANSWER KEY LINK
+    ====================================================== -->
+
+    {% if post.answer_key or post.answer_key_link %}
+
+    <section class="job-section">
+
+        <h2>Answer Key</h2>
+
+
+        {% if post.answer_key %}
+
+        <div class="job-content rich-field-content">
+
+            {{ post.answer_key|safe }}
+
+        </div>
+
+        {% endif %}
+
+
+        {% if post.answer_key_link %}
+
+        <div class="important-links">
+
+            <a href="{{ post.answer_key_link }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="important-link">
+
+                <i class="fas fa-key"></i>
+                Download Answer Key
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
 
     </section>
 
@@ -697,6 +776,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                rel="noopener noreferrer"
                class="important-link">
 
+                <i class="fas fa-external-link-alt"></i>
                 Apply Online
 
             </a>
@@ -711,6 +791,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                rel="noopener noreferrer"
                class="important-link">
 
+                <i class="fas fa-file-pdf"></i>
                 Download Notification
 
             </a>
@@ -725,6 +806,7 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                rel="noopener noreferrer"
                class="important-link">
 
+                <i class="fas fa-globe"></i>
                 Official Website
 
             </a>
@@ -782,12 +864,21 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 </div>
 
 
-<section class="post-faq-section" aria-labelledby="post-faq-heading">
+<!-- =====================================================
+     FAQ
+====================================================== -->
+
+<section class="post-faq-section"
+         aria-labelledby="post-faq-heading">
 
     <div class="post-faq-header">
+
         <span>FAQ</span>
+
         <strong>– {{ post.title }}</strong>
+
     </div>
+
 
     <div class="post-faq-list">
 
@@ -804,26 +895,37 @@ Latest information about {{ post.title }}, including important dates, eligibilit
                     aria-controls="post-faq-answer-{{ faq.id }}"
                 >
 
-                    <span class="post-faq-icon">?</span>
+                    <span class="post-faq-icon">
+                        ?
+                    </span>
 
                     <span class="post-faq-question-text">
+
                         {{ faq.question }}
+
                     </span>
 
                     <span class="post-faq-arrow">
+
                         +
+
                     </span>
 
                 </button>
+
 
                 <div
                     id="post-faq-answer-{{ faq.id }}"
                     class="post-faq-answer"
                     hidden
                 >
+
                     <div class="rich-field-content">
+
                         {{ faq.answer|safe }}
+
                     </div>
+
                 </div>
 
             </article>
@@ -833,7 +935,9 @@ Latest information about {{ post.title }}, including important dates, eligibilit
         {% empty %}
 
             <div class="post-faq-empty">
+
                 No FAQ Available
+
             </div>
 
         {% endfor %}
@@ -842,20 +946,34 @@ Latest information about {{ post.title }}, including important dates, eligibilit
 
 </section>
 
+
+<!-- =====================================================
+     FAQ JAVASCRIPT
+====================================================== -->
+
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const faqButtons = document.querySelectorAll(".post-faq-question");
+    const faqButtons =
+        document.querySelectorAll(".post-faq-question");
+
 
     faqButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const faqItem = button.closest(".post-faq-item");
-            const answer = faqItem.querySelector(".post-faq-answer");
-            const arrow = faqItem.querySelector(".post-faq-arrow");
+            const faqItem =
+                button.closest(".post-faq-item");
 
-            const isOpen = button.getAttribute("aria-expanded") === "true";
+            const answer =
+                faqItem.querySelector(".post-faq-answer");
+
+            const arrow =
+                faqItem.querySelector(".post-faq-arrow");
+
+            const isOpen =
+                button.getAttribute("aria-expanded") === "true";
 
 
             /* Close all FAQs */
@@ -908,7 +1026,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
 </script>
+
+
 <!-- =====================================================
      RELATED JOBS
 ====================================================== -->
@@ -920,6 +1041,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2 class="section-title">
         Related Jobs
     </h2>
+
 
     <div class="related-jobs-list">
 
@@ -939,7 +1061,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% if related.short_description %}
 
                 <p>
-                    {{ related.short_description|truncatewords:20 }}
+
+                    {{ related.short_description|striptags|truncatewords:20 }}
+
                 </p>
 
                 {% endif %}
@@ -963,4 +1087,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 {% endif %}
+
+
 {% endblock %}

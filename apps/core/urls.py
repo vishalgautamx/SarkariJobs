@@ -16,6 +16,15 @@ urlpatterns = [
         views.feedback_conversation,
         name="feedback_conversation"
     ),
+    path("privacy-policy/", views.privacy_policy, name="privacy_policy"),
+    path("disclaimer/", views.disclaimer, name="disclaimer"),
+    path(
+    "terms-and-conditions/",
+    views.terms_conditions,
+    name="terms_conditions"
+),
+path("about/", views.about, name="about"),
+    
 
     path(
         "feedback/conversation/<str:token>/reply/",

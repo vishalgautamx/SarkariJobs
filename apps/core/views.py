@@ -204,3 +204,14 @@ def feedback_user_reply(request, token):
         "feedback_conversation",
         token=token
     )
+
+def privacy_policy(request):
+    return render(request, "privacy_policy.html")
+
+
+def disclaimer(request):
+    return render(request, "disclaimer.html")
+def terms_conditions(request):
+    return render(request, "terms_conditions.html")
+
+def about(request): return render(request, "about.html")
