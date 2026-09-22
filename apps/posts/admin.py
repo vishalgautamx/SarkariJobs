@@ -6,7 +6,7 @@ from .models import Post, DiscoverItem, PostFAQ
 
 class PostFAQInline(admin.TabularInline):
     model = PostFAQ
-    extra = 2
+    extra = 0
     fields = (
         "question",
         "answer",
