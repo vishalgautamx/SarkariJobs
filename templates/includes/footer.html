@@ -1,11 +1,15 @@
+{% load static %}
+
 <footer class="sj-footer">
 
 
     <div class="sj-footer-container">
 
         <div class="sj-footer-brand">
-            <div class="sj-footer-logo"><img src="/static/images/sarkari_jobs.png"
-                    style="height: 90px;width: 90px; border-radius: 50%;"></div>
+            <div class="sj-footer-logo">
+                <img src="{% static 'images/sarkari_jobs.png' %}" alt="SarkariJobs" width="90" height="90"
+                    style="border-radius: 50%;">
+            </div>
 
             <div>
                 <h3>SarkariJobs</h3>

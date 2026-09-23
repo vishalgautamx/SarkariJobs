@@ -3,139 +3,148 @@
 <html lang="en">
 
 <head>
-<meta name="google-site-verification" content="pWZelzHB_uEf-0GcXAyYeLVedArmYmRx3PUdf_37HGc" />
-    <meta charset="UTF-8">
+      <meta name="google-site-verification" content="pWZelzHB_uEf-0GcXAyYeLVedArmYmRx3PUdf_37HGc" />
+      <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ================= SEO TITLE ================= -->
-    <title>
-        {% block title %}
-        SarkariJobs - Latest Government Jobs, Results & Admit Card
-        {% endblock %}
-    </title>
 
-    <!-- ================= META DESCRIPTION ================= -->
-    <meta name="description"
-          content="{% block meta_description %}
+      <!-- ================= SEO TITLE ================= -->
+      <title>
+            {% block title %}
+            SarkariJobs - Latest Government Jobs, Results & Admit Card
+            {% endblock %}
+      </title>
+
+      <!-- ================= META DESCRIPTION ================= -->
+      <meta name="description" content="{% block meta_description %}
           SarkariJobs provides the latest government jobs, Sarkari Naukri,
           recruitment, results, admit cards, answer keys and government job updates.
           {% endblock %}">
 
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="SarkariJobs">
+      <meta name="robots" content="index, follow">
+      <meta name="author" content="SarkariJobs">
 
-    <!-- ================= CANONICAL ================= -->
-    <link rel="canonical"
-          href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+      <!-- ================= CANONICAL ================= -->
+      <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
 
-    <!-- ================= OPEN GRAPH ================= -->
+      <!-- ================= OPEN GRAPH ================= -->
 
-    <meta property="og:site_name" content="SarkariJobs">
+      <meta property="og:site_name" content="SarkariJobs">
 
-    <meta property="og:title"
-          content="{% block og_title %}
+      <meta property="og:title" content="{% block og_title %}
           SarkariJobs - Government Jobs & Updates
           {% endblock %}">
 
-    <meta property="og:description"
-          content="{% block og_description %}
+      <meta property="og:description" content="{% block og_description %}
           Latest government jobs, Sarkari Naukri, results,
           admit cards and recruitment updates.
           {% endblock %}">
 
-    <meta property="og:type" content="website">
+      <meta property="og:type" content="website">
 
-    <meta property="og:url"
-          content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+      <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
 
-    <meta property="og:image"
-          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/sarkarijobs-logo.png' %}">
+      <meta property="og:image"
+            content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/sarkarijobs-logo.png' %}">
 
-    <meta property="og:image:alt"
-          content="SarkariJobs Government Jobs Portal">
+      <meta property="og:image:alt" content="SarkariJobs Government Jobs Portal">
 
-    <!-- ================= TWITTER / X ================= -->
+      <!-- ================= TWITTER / X ================= -->
 
-    <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="twitter:title"
-          content="{% block twitter_title %}
+      <meta name="twitter:title" content="{% block twitter_title %}
           SarkariJobs - Latest Government Jobs & Updates
           {% endblock %}">
 
-    <meta name="twitter:description"
-          content="{% block twitter_description %}
+      <meta name="twitter:description" content="{% block twitter_description %}
           Latest government jobs, results, admit cards,
           answer keys and recruitment updates.
           {% endblock %}">
 
-    <meta name="twitter:image"
-          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/sarkarijobs-logo.png' %}">
+      <meta name="twitter:image"
+            content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/sarkarijobs-logo.png' %}">
 
-    <!-- ================= WEBSITE SCHEMA ================= -->
+      <!-- ================= WEBSITE SCHEMA ================= -->
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SarkariJobs",
-        "url": "{{ request.scheme }}://{{ request.get_host }}/",
-        "description": "Latest government jobs, Sarkari Naukri, results, admit cards, answer keys and recruitment updates.",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "{{ request.scheme }}://{{ request.get_host }}/search/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+
+      <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sarkari Jobs",
+    "alternateName": "SarkariJobs",
+    "url": "{{ request.scheme }}://{{ request.get_host }}/",
+    "description": "Latest government jobs, Sarkari Naukri, results, admit cards, answer keys and recruitment updates.",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ request.scheme }}://{{ request.get_host }}/search/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
     }
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525614373391114"
-     crossorigin="anonymous"></script>
+}
+</script>
 
-    <!-- ================= FAVICON ================= -->
+      <!-- ================= ORGANIZATION SCHEMA ================= -->
 
-    <link rel="icon"
-          type="image/png"
-          href="{% static 'images/sarkarijobs-logo.png' %}">
+      <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sarkari Jobs",
+    "alternateName": "SarkariJobs",
+    "url": "{{ request.scheme }}://{{ request.get_host }}/",
+    "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/sarkari_jobs.png' %}"
+}
+</script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525614373391114"
+            crossorigin="anonymous"></script>
 
-    <!-- ================= BOOTSTRAP ================= -->
+      <!-- ================= FAVICON ================= -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+      {% load static %}
 
-    <!-- ================= FONT AWESOME ================= -->
+      <link rel="icon" type="image/png" href="{% static 'images/sarkari_jobs.png' %}">
+      <link rel="preconnect" href="https://cdn.jsdelivr.net">
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <!-- ================= BOOTSTRAP ================= -->
 
-    <!-- ================= CSS ================= -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- ================= FONT AWESOME ================= -->
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+      <!-- ================= CSS ================= -->
+
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
 </head>
 
 <body>
 
-{% include 'includes/header.html' %}
-{% include 'includes/navbar.html' %}
-<main id="main-content">
-    {% block content %}
-    {% endblock %}
-</main>
+      {% include 'includes/header.html' %}
+      {% include 'includes/navbar.html' %}
+      <main id="main-content">
+            {% block content %}
+            {% endblock %}
+      </main>
 
-{% include 'includes/feedback.html' %}
+      {% include 'includes/feedback.html' %}
 
-{% include 'includes/footer.html' %}
+      {% include 'includes/footer.html' %}
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-<script defer src="{% static 'js/menu.js' %}"></script>
-<script defer src="{% static 'js/search.js' %}"></script>
+      <script defer src="{% static 'js/menu.js' %}"></script>
+      <script defer src="{% static 'js/search.js' %}"></script>
 
 </body>
+
 </html>
