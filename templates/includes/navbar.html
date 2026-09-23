@@ -24,7 +24,7 @@
 
             <li><a href="/admission/">Admission</a></li>
 
-            <a href="{% url 'contact' %}">Contact</a>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
 
         </ul>
        <div class="nav-search">
@@ -38,8 +38,8 @@
             autocomplete="off"
         >
 
-        <button type="button" id="searchToggle">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <button type="button" id="searchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </button>
 
     </div>
