@@ -1,8 +1,10 @@
 User-agent: Googlebot
 Allow: /
+Allow: /latest-jobs/
 
 User-agent: *
 Allow: /
+Allow: /latest-jobs/
 
 Disallow: /admin/
 Disallow: /search/
