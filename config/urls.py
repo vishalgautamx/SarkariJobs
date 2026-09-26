@@ -4,8 +4,20 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from django.urls import path, include
 from apps.core.views import home, contact
+from django.http import HttpResponse
 from django.conf import settings
 from django.conf.urls.static import static
+
+def robots_txt(request):
+    content = """User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /search/
+
+Sitemap: https://sarkarijobs-gxul.onrender.com/sitemap.xml
+"""
+    return HttpResponse(content, content_type="text/plain")
 
 from apps.posts.views import (
     search_suggestions,
@@ -46,14 +58,8 @@ urlpatterns = [
         name="search_suggestions"
     ),
 
-    path(
-        "robots.txt",
-        TemplateView.as_view(
-            template_name="robots.txt",
-            content_type="text/plain"
-        ),
-        name="robots_txt",
-    ),
+    path("robots.txt", robots_txt, name="robots_txt"),
+
     path(
     "ads.txt",
     TemplateView.as_view(
