@@ -2896,8 +2896,9 @@ MOBILE
 
 
 .post-page {
-    width: 92%;
+    width: 100%;
     margin: 20px auto 35px;
+    padding: 0;
 }
 
 

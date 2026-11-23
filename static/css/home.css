@@ -188,13 +188,13 @@
 ================================ */
 
 .home-sections{
-    max-width:85%;
+    max-width:100%;
     margin:25px auto 50px;
     padding:0 0px;
 
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:6px;
+    gap:2px;
 
     align-items:stretch;
 }
@@ -543,7 +543,7 @@
 
     .home-sections{
         grid-template-columns:repeat(2,1fr);
-        gap:14px;
+        gap:6px;
     }
 
 }
@@ -606,7 +606,7 @@
 @media(max-width:400px){
 
     .home-sections{
-        padding:0 5px;
+        padding:0 2px;
     }
 
 
@@ -624,8 +624,8 @@
 
     .home-sections{
         grid-template-columns:repeat(2, 1fr);
-        gap:10px;
-        padding:0 6px;
+        gap:3px;
+        padding:0 3px;
         margin-top:20px;
     }
 
@@ -1120,7 +1120,7 @@
 @media(max-width:768px){
 
     .sarkarijobs-info{
-        padding:0 5px;
+        padding:0 3px;
         margin-top:20px;
     }
 
@@ -3215,7 +3215,7 @@ justify-content: center;
 @media (max-width: 600px) {
 
     .home-sections {
-        width: 92%;
+        width: 100%;
 
         display: grid;
 
