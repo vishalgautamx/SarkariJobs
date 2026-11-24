@@ -296,9 +296,9 @@
 .result-box li {
   position: relative;
 
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.35;
 
   transition:
@@ -318,7 +318,7 @@
   color: #1117a5;
 
   text-decoration: underline;
-
+font-size: 15px;
   text-decoration-thickness: 1px;
 
   transition:
@@ -1105,7 +1105,7 @@
   }
 
   .faq-item p {
-    font-size: 10.5px;
+    font-size: 13.5px;
   }
 }
 /* =====================================================
@@ -2852,6 +2852,7 @@
     .result-box ul li {
       padding-left: 0;
       margin-left: 0;
+      margin-bottom: 15px;
     }
 
     .result-box li a {
